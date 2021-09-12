@@ -1,0 +1,6 @@
+{
+    "git_repo_name": "",
+    "package_name": "{{ cookiecutter.git_repo_name|trim|lower|replace('-', '_') }}",
+    "package_description": "",
+    "package_type": ["application", "library"]
+}
