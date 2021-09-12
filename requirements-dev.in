@@ -1,0 +1,4 @@
+bump2version
+cruft[pyproject]
+setuptools
+wheel

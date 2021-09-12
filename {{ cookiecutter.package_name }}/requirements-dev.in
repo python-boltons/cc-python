@@ -1,0 +1,12 @@
+### Tests
+pytest
+pytest-cov
+typeguard
+
+### Lint
+black
+flake8
+isort
+mypy
+pydocstyle[toml]
+pylint

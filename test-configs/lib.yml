@@ -1,0 +1,5 @@
+default_context:
+  git_repo_name: lib
+  package_name: lib
+  package_description: "A test library."
+  package_type: library

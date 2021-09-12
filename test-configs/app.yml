@@ -1,0 +1,5 @@
+default_context:
+  git_repo_name: app
+  package_name: app
+  package_description: "A test application."
+  package_type: application
