@@ -8,8 +8,8 @@ SHELL := /bin/bash
 VENV := .venv
 VENV_ACTIVATE := $(VENV)/bin/activate
 
-PYTHON ?= source $(VENV)/bin/activate; python3
-PIP := source $(VENV)/bin/activate; python3 -m pip
+PYTHON ?= source $(VENV)/bin/activate; python
+PIP := source $(VENV)/bin/activate; python -m pip
 ALL_TEST_CONFIGS := $(shell ls test-configs | xargs -I '{}'  basename '{}' .yml)
 
 .PHONY: help

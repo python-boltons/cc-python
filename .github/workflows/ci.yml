@@ -1,0 +1,26 @@
+name: CI Pipeline
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches: [master]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python.
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies.
+        run: |
+          python -m pip install -U pip
+
+      - name: Cleanup test artifacts from previous runs.
+        run: |
+          make clean
+
+      - name: Generate test projects using this cookiecutter.
+        run: |
+          make test
