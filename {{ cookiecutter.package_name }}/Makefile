@@ -9,7 +9,7 @@ VENV := .venv
 VENV_ACTIVATE := $(VENV)/bin/activate
 SOURCE_VENV := source $(VENV_ACTIVATE);
 
-PYTHON ?= $(SOURCE_VENV) python
+PYTHON ?= $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PIP := $(PYTHON) -m pip
 
 .PHONY: help
@@ -54,7 +54,7 @@ pylint: $(VENV_ACTIVATE)  ## Run pylint checks.
 
 .PHONY: test
 test:  $(VENV_ACTIVATE)  ## Run this project's test suite.
-	$(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python -m pytest -vv \
+	$(PYTHON) -m pytest -vv \
 		 --cov \
 		 --cov-fail-under=80 \
 		 --cov-branch \
