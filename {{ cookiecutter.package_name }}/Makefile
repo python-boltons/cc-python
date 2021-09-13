@@ -10,7 +10,7 @@ VENV_ACTIVATE := $(VENV)/bin/activate
 SOURCE_VENV := source $(VENV_ACTIVATE);
 
 PYTHON ?= $(SOURCE_VENV) python
-PIP := $(SOURCE_VENV) python -m pip
+PIP := $(PYTHON) -m pip
 
 .PHONY: help
 help:  ## Print this message.
