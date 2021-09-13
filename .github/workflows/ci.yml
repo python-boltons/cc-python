@@ -24,3 +24,7 @@ jobs:
       - name: Generate test projects using this cookiecutter.
         run: |
           make test
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
