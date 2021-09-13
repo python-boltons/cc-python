@@ -33,7 +33,7 @@ function run() {
     old_version="$(cat "${version_txt}")"
 
     if ! "${BIN}"/new_changelog_section "cc-python" "${old_version}" "${new_version}"; then
-        printf "%s: Unable to render new changelog version. Aborting new release...\n" \
+        printf "%s: Unable to render new changelog section. Aborting new release...\n" \
             "${SCRIPTNAME}"
         return 0
     fi
