@@ -16,7 +16,7 @@ help:  ## Print this message.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
 
 .PHONY: all
-all: lint test  ## Run all tests, linters, and build documentation.
+all: lint test  ## Run all tests and linters.
 
 .PHONY: lint
 lint: black isort pydocstyle flake8 mypy pylint ## Run all linting checks.
