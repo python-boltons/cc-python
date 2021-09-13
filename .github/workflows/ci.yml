@@ -26,5 +26,10 @@ jobs:
           make test
   release:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [test]
     steps:
       - uses: actions/checkout@v2
+      - name: Release a new version if changelog contains unreleased changes.
+        run: |
+          echo release
