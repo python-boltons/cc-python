@@ -26,3 +26,7 @@ test-%: $(VENV_ACTIVATE)
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
 	$(PIP) install -U -r requirements-dev.in
+
+.PHONY: clean
+clean:  ## Remove all build, test, coverage and Python artifacts.
+	rm -rf build $(VENV)
