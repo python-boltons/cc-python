@@ -7,9 +7,9 @@ file's format is based on [Keep a Changelog].
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.13...HEAD)
 
-### Added
+### Miscellaneous
 
-* New stuff...
+* Test release to see if automated releases work.
 
 ## [2021.09.13](https://github.com/bbugyi200/cc-python/releases/tag/2021.09.13)
 

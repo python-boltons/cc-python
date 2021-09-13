@@ -40,6 +40,9 @@ function run() {
 
     echo "${new_version}" > "${version_txt}"
     if [[ "${draft}" != true ]]; then
+        git config --global user.name "GitHub CI Workflow"
+        git config --global user.email "bryanbugyi34@gmail.com"
+
         git commit -am "Bump version ${old_version} -> ${new_version}"
         git push
         
