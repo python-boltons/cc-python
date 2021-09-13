@@ -9,6 +9,7 @@ VENV := .venv
 VENV_ACTIVATE := $(VENV)/bin/activate
 SOURCE_VENV := source $(VENV_ACTIVATE);
 
+PYTHONPATH ?=
 PYTHON ?= $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PIP := $(PYTHON) -m pip
 
