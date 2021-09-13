@@ -1,0 +1,47 @@
+#!/bin/bash
+
+readonly SCRIPTNAME="$(basename "$0")"
+readonly BIN="$(dirname "$0")"
+readonly ROOT="$(dirname "${BIN}")"
+
+function run() {
+    local calendar_version="$(date +%Y.%m.%d)"
+    local new_version="${calendar_version}"
+
+    local i=0
+    while "${BIN}"/git_tag_exists "${new_version}"; do
+        i=$((i + 1))
+
+        new_version="${calendar_version}"-"${i}"
+        if [[ "${i}" -ge 100 ]]; then
+            printf 1>&2 "%s: Bad version. Maximum of 100 releases per-day: %s\n" \
+                "${SCRIPTNAME}" \
+                "${new_version}"
+            exit 1
+        fi
+    done
+
+    printf "%s: New version: %s\n" \
+        "${SCRIPTNAME}" \
+        "${new_version}"
+
+    local version_txt="${ROOT}"/version.txt
+    old_version="$(cat "${version_txt}")"
+
+    if ! "${BIN}"/new_changelog_section "cc-python" "${old_version}" "${new_version}"; then
+        printf "%s: Unable to render new changelog version. Aborting new release...\n" \
+            "${SCRIPTNAME}"
+        return 0
+    fi
+
+    echo "${new_version}" > "${version_txt}"
+    git commit -am "Bump version ${old_version} -> ${new_version}"
+    git push
+
+    git tag "${new_version}"
+    git push --tags
+}
+
+if [[ "${SCRIPTNAME}" == "$(basename "${BASH_SOURCE[0]}")" ]]; then
+    run "$@"
+fi

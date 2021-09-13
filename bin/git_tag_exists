@@ -1,0 +1,29 @@
+#!/bin/bash
+
+readonly SCRIPTNAME="$(basename "$0")"
+
+function run() {
+    if [[ -z "$1" ]]; then
+        printf 1>&2 "usage: %s TAG\n" "${SCRIPTNAME}"
+        return 2
+    fi
+
+    local tag="$1"
+    shift
+
+    if [[ -n "$(git tag -l "${tag}")" ]]; then
+        printf "%s: tag exists: %s\n" \
+            "${SCRIPTNAME}" \
+            "${tag}"
+        return 0
+    else
+        printf "%s: tag does NOT exist: %s\n" \
+            "${SCRIPTNAME}" \
+            "${tag}"
+        return 1
+    fi
+}
+
+if [[ "${SCRIPTNAME}" == "$(basename "${BASH_SOURCE[0]}")" ]]; then
+    run "$@"
+fi

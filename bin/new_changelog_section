@@ -1,0 +1,46 @@
+#!/bin/bash
+
+readonly SCRIPTNAME="$(basename "$0")"
+readonly NO_CHANGES_MARKER="No notable changes have been made."
+
+function run() {
+    if [[ $# -ne 3 ]]; then
+        printf 1>&2 "usage: %s REPO_NAME OLD_VERSION NEW_VERSION\n" \
+            "${SCRIPTNAME}"
+        return 2
+    fi
+
+    local repo_name="$1"
+    shift
+
+    local old_version="$1"
+    shift
+
+    local new_version="$1"
+    shift
+
+    printf "%s: repo_name=%s old_version=%s new_version=%s\n" \
+        "${SCRIPTNAME}" \
+        "${repo_name}" \
+        "${old_version}" \
+        "${new_version}"
+
+    if grep -q "${NO_CHANGES_MARKER}" ./CHANGELOG.md; then
+        printf "%s: No unreleased changes in changelog.\n" \
+            "${SCRIPTNAME}"
+        return 1
+    else
+        local new_lines="## [Unreleased](https://github.com/bbugyi200/${repo_name}/compare/${new_version}...HEAD)\n\n${NO_CHANGES_MARKER}\n\n## [${new_version}](https://github.com/bbugyi200/${repo_name}/compare/${old_version}...${new_version})\n"
+
+        printf "%s: Adding new '%s' section to CHANGELOG.md.\n" \
+            "${SCRIPTNAME}" \
+            "${new_version}"
+        perl -i -nE \
+            "if (/^## \[?Unreleased/) { print \"${new_lines}\"; } else { print; }" \
+            ./CHANGELOG.md
+    fi
+}
+
+if [[ "${SCRIPTNAME}" == "$(basename "${BASH_SOURCE[0]}")" ]]; then
+    run "$@"
+fi
