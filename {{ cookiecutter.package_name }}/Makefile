@@ -31,25 +31,25 @@ isort: $(VENV_ACTIVATE)  ## Run isort checks.
 	$(PYTHON) -m isort --check-only src
 	$(PYTHON) -m isort --check-only tests
 
-.PHONY: mypy
-mypy: $(VENV_ACTIVATE)  ## Run mypy checks.
-	$(PYTHON) -m mypy src
-	$(PYTHON) -m mypy tests
+.PHONY: pydocstyle
+pydocstyle:  $(VENV_ACTIVATE)  ## Run pydocstyle checks.
+	$(PYTHON) -m pydocstyle src
+	$(PYTHON) -m pydocstyle tests
 
 .PHONY: flake8
 flake8: $(VENV_ACTIVATE)  ## Run flake8 checks.
 	$(PYTHON) -m flake8 src
 	$(PYTHON) -m flake8 tests
 
+.PHONY: mypy
+mypy: $(VENV_ACTIVATE)  ## Run mypy checks.
+	$(PYTHON) -m mypy src
+	$(PYTHON) -m mypy tests
+
 .PHONY: pylint
 pylint: $(VENV_ACTIVATE)  ## Run pylint checks.
 	$(PYTHON) -m pylint src
 	$(PYTHON) -m pylint tests
-
-.PHONY: pydocstyle
-pydocstyle:  $(VENV_ACTIVATE)  ## Run pydocstyle checks.
-	$(PYTHON) -m pydocstyle src
-	$(PYTHON) -m pydocstyle tests
 
 .PHONY: test
 test:  $(VENV_ACTIVATE)  ## Run this project's test suite.
