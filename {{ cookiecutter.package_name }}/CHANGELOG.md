@@ -10,3 +10,5 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 
 ## Unreleased
+
+No notable changes have been made.
