@@ -40,7 +40,7 @@ test-make-%: $(VENV_ACTIVATE)
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
 	$(call cruft_create,$*)
-	cd build/$* && $(call init_act_config) && $(ACT) -j test
+	cd build/$* && $(call init_act_config) && $(ACT) -j test -j lint
 
 $(ACT): $(GO)
 	GO111MODULE=on GOROOT=$(PWD)/build/go GOPATH=$(PWD)/build/go/work $(GO) install github.com/nektos/act@latest
