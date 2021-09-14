@@ -47,6 +47,7 @@ jobs:
           make lint
 
   publish:
+    if: ! env.ACT  # if not run via the 'act' tool
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
