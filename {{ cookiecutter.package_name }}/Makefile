@@ -4,7 +4,6 @@
 MAKEFLAGS += --warn-undefined-variables
 SHELL := /bin/bash
 
-MAKEFLAGS += --warn-undefined-variables
 PIP = $(PYTHON) -m pip
 PYTHON = $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
