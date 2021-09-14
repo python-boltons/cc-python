@@ -1,6 +1,7 @@
 ### Tests
 pytest
 pytest-cov
+tox
 typeguard
 
 ### Lint
