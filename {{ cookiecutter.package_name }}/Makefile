@@ -54,12 +54,13 @@ pylint: $(VENV_ACTIVATE)  ## Run pylint checks.
 
 .PHONY: test
 test:  $(VENV_ACTIVATE)  ## Run this project's test suite.
-	$(TOX) -e py -- -v --cov --cov-fail-under=90 --cov-branch -vv \
-		 --cov \
-		 --cov-fail-under=80 \
-		 --cov-branch \
-		 --doctest-modules \
-		 --doctest-report ndiff
+	$(TOX) -e py -- \
+		-vv \
+		--cov \
+		--cov-fail-under=80 \
+		--cov-branch \
+		--doctest-modules \
+		--doctest-report ndiff
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
