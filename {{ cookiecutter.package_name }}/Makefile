@@ -5,13 +5,12 @@ SHELL := /bin/bash
 .DELETE_ON_ERROR:
 .SUFFIXES:
 
-VENV := .venv
-VENV_ACTIVATE := $(VENV)/bin/activate
-SOURCE_VENV := source $(VENV_ACTIVATE);
-
+PIP = $(PYTHON) -m pip
+PYTHON = $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
-PYTHON ?= $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
-PIP := $(PYTHON) -m pip
+SOURCE_VENV = source $(VENV_ACTIVATE);
+VENV := .venv
+VENV_ACTIVATE = $(VENV)/bin/activate
 
 .PHONY: help
 help:  ## Print this message.
@@ -55,7 +54,7 @@ pylint: $(VENV_ACTIVATE)  ## Run pylint checks.
 
 .PHONY: test
 test:  $(VENV_ACTIVATE)  ## Run this project's test suite.
-	$(PYTHON) -m pytest -vv \
+	tox -e py -- -v --cov --cov-fail-under=90 --cov-branch -vv \
 		 --cov \
 		 --cov-fail-under=80 \
 		 --cov-branch \
