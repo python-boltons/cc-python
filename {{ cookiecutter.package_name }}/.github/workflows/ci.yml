@@ -47,7 +47,6 @@ jobs:
           make lint
 
   publish:
-    if: ! env.ACT  # if not run via the 'act' tool
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
@@ -67,6 +66,7 @@ jobs:
           python setup.py sdist
 
       - name: Publish distribution to Test PyPI
+        if: ! env.ACT  # if not run via the 'act' tool
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${% raw %}{{ secrets.TEST_PYPI_API_TOKEN }}{% endraw %}
@@ -74,7 +74,7 @@ jobs:
           skip_existing: true
 
       - name: Publish distribution to PyPI
-        if: github.repository == 'bbugyi200/{{ cookiecutter.git_repo_name }}' && startsWith(github.ref, 'refs/tags')
+        if: github.repository == 'bbugyi200/{{ cookiecutter.git_repo_name }}' && startsWith(github.ref, 'refs/tags') && ! env.ACT
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${% raw %}{{ secrets.PYPI_API_TOKEN }}{% endraw %}
