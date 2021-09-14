@@ -13,4 +13,5 @@ pydocstyle[toml]
 pylint
 
 ### Miscellaneous
+bump2version
 pip-tools
