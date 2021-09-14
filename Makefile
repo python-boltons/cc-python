@@ -5,12 +5,12 @@ SHELL := /bin/bash
 .DELETE_ON_ERROR:
 .SUFFIXES:
 
-ACT := build/go/work/bin/act
+ACT := $(PWD)/build/go/work/bin/act
 ALL_TEST_CONFIGS := $(shell ls test-configs | xargs -I '{}'  basename '{}' .yml)
-GO := build/go/bin/go
+GO := $(PWD)/build/go/bin/go
 PIP = $(SOURCE_VENV) python -m pip
 PYTHON = $(SOURCE_VENV) python
-SOURCE_VENV = source $(VENV)/bin/activate;
+SOURCE_VENV = source $(VENV_ACTIVATE);
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
 
@@ -37,6 +37,7 @@ test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  #
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
 	$(call create_project,$*)
+	cd build/$* && $(ACT)
 
 $(ACT): $(GO)
 	GO111MODULE=on GOROOT=$(PWD)/build/go GOPATH=$(PWD)/build/go/work $(GO) install github.com/nektos/act@latest
