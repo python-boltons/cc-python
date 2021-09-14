@@ -1,9 +1,13 @@
+.DELETE_ON_ERROR:
 .SHELLFLAGS := -eu -o pipefail -c
+.SUFFIXES:
+MAKEFLAGS += --warn-undefined-variables
+SHELL := /bin/bash
+
 MAKEFLAGS += --warn-undefined-variables
 PIP = $(PYTHON) -m pip
 PYTHON = $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
-SHELL := /bin/bash
 SOURCE_VENV = source $(VENV_ACTIVATE);
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate

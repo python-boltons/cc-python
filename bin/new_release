@@ -21,7 +21,7 @@ function run() {
             printf 1>&2 "%s: Bad version. Maximum of 100 releases per-day: %s\n" \
                 "${SCRIPTNAME}" \
                 "${new_version}"
-            exit 1
+            return 1
         fi
     done
 

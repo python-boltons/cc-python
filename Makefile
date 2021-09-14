@@ -1,11 +1,14 @@
+.DELETE_ON_ERROR:
 .SHELLFLAGS := -eu -o pipefail -c
+.SUFFIXES:
+MAKEFLAGS += --warn-undefined-variables
+SHELL := /bin/bash
+
 ACT := $(PWD)/build/go/work/bin/act
 ALL_TEST_CONFIGS := $(shell ls test-configs | xargs -I '{}'  basename '{}' .yml)
 GO := $(PWD)/build/go/bin/go
-MAKEFLAGS += --warn-undefined-variables
 PIP = $(SOURCE_VENV) python -m pip
 PYTHON = $(SOURCE_VENV) python
-SHELL := /bin/bash
 SOURCE_VENV = source $(VENV_ACTIVATE);
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
@@ -33,7 +36,7 @@ test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  #
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
 	$(call cruft_create,$*)
-	cd build/$* && $(ACT)
+	cd build/$* && $(ACT) -j test
 
 $(ACT): $(GO)
 	GO111MODULE=on GOROOT=$(PWD)/build/go GOPATH=$(PWD)/build/go/work $(GO) install github.com/nektos/act@latest
