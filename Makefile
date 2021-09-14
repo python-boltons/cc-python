@@ -14,7 +14,7 @@ SOURCE_VENV = source $(VENV_ACTIVATE);
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
 
-define create_project
+define cruft_create
 	$(PYTHON) -m cruft create --config-file test-configs/$(1).yml --output-dir build --no-input --overwrite-if-exists .
 endef
 
@@ -29,14 +29,14 @@ test: test-make test-act  ## Runs tests by generating projects using this cookie
 test-make:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-make-$(TEST_CONFIG))  ## Run all tests using 'make'.
 
 test-make-%: $(VENV_ACTIVATE)
-	$(call create_project,$*)
+	$(call cruft_create,$*)
 	cd build/$* && make all
 
 .PHONY: test-make
 test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  ## Run all tests using 'act'.
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
-	$(call create_project,$*)
+	$(call cruft_create,$*)
 	cd build/$* && $(ACT)
 
 $(ACT): $(GO)
