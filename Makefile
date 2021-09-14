@@ -17,6 +17,10 @@ define cruft_create
 	$(PYTHON) -m cruft create --config-file test-configs/$(1).yml --output-dir build --no-input --overwrite-if-exists .
 endef
 
+define init_act_config
+	printf "-P ubuntu-latest=catthehacker/ubuntu:act-latest\n-P ubuntu-20.04=catthehacker/ubuntu:act-20.04\n-P ubuntu-18.04=catthehacker/ubuntu:act-18.04\nubuntu-16.04=catthehacker/ubuntu:act-16.04" > .actrc
+endef
+
 .PHONY: help
 help:  ## Print this message.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
@@ -36,7 +40,7 @@ test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  #
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
 	$(call cruft_create,$*)
-	cd build/$* && $(ACT) -j test
+	cd build/$* && $(call init_act_config) && $(ACT) -j test
 
 $(ACT): $(GO)
 	GO111MODULE=on GOROOT=$(PWD)/build/go GOPATH=$(PWD)/build/go/work $(GO) install github.com/nektos/act@latest
