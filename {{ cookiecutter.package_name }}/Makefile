@@ -9,6 +9,7 @@ PIP = $(PYTHON) -m pip
 PYTHON = $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
 SOURCE_VENV = source $(VENV_ACTIVATE);
+TOX = $(SOURCE_VENV) tox
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
 
@@ -54,7 +55,7 @@ pylint: $(VENV_ACTIVATE)  ## Run pylint checks.
 
 .PHONY: test
 test:  $(VENV_ACTIVATE)  ## Run this project's test suite.
-	tox -e py -- -v --cov --cov-fail-under=90 --cov-branch -vv \
+	$(TOX) -e py -- -v --cov --cov-fail-under=90 --cov-branch -vv \
 		 --cov \
 		 --cov-fail-under=80 \
 		 --cov-branch \
