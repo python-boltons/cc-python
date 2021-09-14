@@ -27,7 +27,7 @@ pipx install cruft
 We then run the following command to generate a new project using cruft:
 
 ```bash
-cruft create gh:bbugyi200/foobar
+cruft create gh:bbugyi200/cc-python
 ```
 
 Answer all of the variable prompts that cruft produces (e.g. `foobar` for the
