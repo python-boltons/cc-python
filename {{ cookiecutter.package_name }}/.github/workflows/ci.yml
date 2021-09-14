@@ -5,7 +5,7 @@ on:  # yamllint disable-line rule:truthy
   pull_request:
 jobs:
   test:
-    runs-on: ${% raw %}{{ matrix.os }}{% endraw %}
+    runs-on: ["{% raw %}${{ matrix.os }}{% endraw %}"]
     strategy:
       fail-fast: false
       matrix:
@@ -14,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python ${% raw %}{{ matrix.python-version }}{% endraw %}.
+      - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}.
         uses: actions/setup-python@v2
         with:
-          python-version: ${% raw %}{{ matrix.python-version }}{% endraw %}
+          python-version: "{% raw %}${{ matrix.python-version }}{% endraw %}"
 
       - name: Install dependencies.
         run: |
