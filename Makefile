@@ -8,10 +8,15 @@ SHELL := /bin/bash
 ACT := build/go/work/bin/act
 ALL_TEST_CONFIGS := $(shell ls test-configs | xargs -I '{}'  basename '{}' .yml)
 GO := build/go/bin/go
-PIP := source $(VENV)/bin/activate; python -m pip
-PYTHON ?= source $(VENV)/bin/activate; python
+PIP = $(SOURCE_VENV) python -m pip
+PYTHON = $(SOURCE_VENV) python
+SOURCE_VENV = source $(VENV)/bin/activate;
 VENV := .venv
-VENV_ACTIVATE := $(VENV)/bin/activate
+VENV_ACTIVATE = $(VENV)/bin/activate
+
+define create_project
+	$(PYTHON) -m cruft create --config-file test-configs/$(1).yml --output-dir build --no-input --overwrite-if-exists .
+endef
 
 .PHONY: help
 help:  ## Print this message.
@@ -24,16 +29,14 @@ test: test-make test-act  ## Runs tests by generating projects using this cookie
 test-make:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-make-$(TEST_CONFIG))  ## Run all tests using 'make'.
 
 test-make-%: $(VENV_ACTIVATE)
-	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
+	$(call create_project,$*)
 	cd build/$* && make all
 
 .PHONY: test-make
 test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  ## Run all tests using 'act'.
 
-# TODO: Factor out cruft command into function.
 test-act-%: $(VENV_ACTIVATE) $(ACT)
-	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
-
+	$(call create_project,$*)
 
 $(ACT): $(GO)
 	GO111MODULE=on GOROOT=$(PWD)/build/go GOPATH=$(PWD)/build/go/work $(GO) install github.com/nektos/act@latest
