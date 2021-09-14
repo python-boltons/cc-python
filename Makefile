@@ -31,12 +31,12 @@ test: test-make test-act  ## Runs tests by generating projects using this cookie
 .PHONY: test-make
 test-make:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-make-$(TEST_CONFIG))  ## Run all tests using 'make'.
 
+.PHONY: test-act
+test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  ## Run all tests using 'act'.
+
 test-make-%: $(VENV_ACTIVATE)
 	$(call cruft_create,$*)
 	cd build/$* && make all
-
-.PHONY: test-make
-test-act:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-act-$(TEST_CONFIG))  ## Run all tests using 'act'.
 
 test-act-%: $(VENV_ACTIVATE) $(ACT)
 	$(call cruft_create,$*)
