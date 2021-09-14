@@ -47,7 +47,7 @@ $(ACT): $(GO)
 
 $(GO):
 	[[ -d build ]] || mkdir build
-	cd build && curl -O https://dl.google.com/go/go1.16.8.linux-amd64.tar.gz && tar xvf go1.16.8.linux-amd64.tar.gz
+	cd build && curl -O https://dl.google.com/go/go1.16.8.linux-amd64.tar.gz && tar xf go1.16.8.linux-amd64.tar.gz
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
