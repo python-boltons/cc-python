@@ -68,7 +68,7 @@ jobs:
       - name: Publish distribution to Test PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          password: ${% raw %}{{ secrets.TEST_PYPI_API_TOKEN }}{% endraw %}
           repository_url: https://test.pypi.org/legacy/
           skip_existing: true
 
@@ -76,4 +76,4 @@ jobs:
         if: github.repository == 'bbugyi200/{{ cookiecutter.git_repo_name }}' && startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          password: ${% raw %}{{ secrets.PYPI_API_TOKEN }}{% endraw %}

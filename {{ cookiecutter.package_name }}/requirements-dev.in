@@ -11,3 +11,6 @@ isort
 mypy
 pydocstyle[toml]
 pylint
+
+### Miscellaneous
+pip-tools
