@@ -20,7 +20,7 @@ help:  ## Print this message.
 test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs tests by generating projects using this cookiecutter.
 
 test-%: $(VENV_ACTIVATE)
-	$(PYTHON) -m cruft create --config-file test-configs/$(1).yml --output-dir build --no-input --overwrite-if-exists .
+	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
 	cd build/$* && make all
 
 $(VENV_ACTIVATE):
