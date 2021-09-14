@@ -1,15 +1,11 @@
-MAKEFLAGS += --warn-undefined-variables
-SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
-.DEFAULT_GOAL := help
-.DELETE_ON_ERROR:
-.SUFFIXES:
-
 ACT := $(PWD)/build/go/work/bin/act
 ALL_TEST_CONFIGS := $(shell ls test-configs | xargs -I '{}'  basename '{}' .yml)
 GO := $(PWD)/build/go/bin/go
+MAKEFLAGS += --warn-undefined-variables
 PIP = $(SOURCE_VENV) python -m pip
 PYTHON = $(SOURCE_VENV) python
+SHELL := /bin/bash
 SOURCE_VENV = source $(VENV_ACTIVATE);
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
