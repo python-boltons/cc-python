@@ -13,6 +13,8 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}.
         uses: actions/setup-python@v2
