@@ -1,0 +1,19 @@
+---
+version: '3.7'
+services:
+  {{ cookiecutter.package_name }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/{{ cookiecutter.package_name }}:delegated
+      - build:/{{ cookiecutter.package_name }}/build
+      - venv:/{{ cookiecutter.package_name }}/.venv
+      - docker-python-cache:/root/.cache/
+    working_dir: /{{ cookiecutter.package_name }}
+    environment: []
+volumes:
+  docker-python-cache:
+    external: true
+  build:
+  venv:

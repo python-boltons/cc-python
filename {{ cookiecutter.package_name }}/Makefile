@@ -2,6 +2,7 @@
 .SHELLFLAGS := -eu -o pipefail -c
 .SUFFIXES:
 MAKEFLAGS += --warn-undefined-variables
+MAKE_CMD := docker volume create docker-python-cache; docker-compose run --rm {{ cookiecutter.package_name }} make
 SHELL := /bin/bash
 
 PIP = $(PYTHON) -m pip
