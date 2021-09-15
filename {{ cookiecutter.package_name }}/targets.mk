@@ -80,3 +80,7 @@ update-requirements: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --upgrade --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	make sync-dev-requirements
+
+.PHONY: dev-shell
+dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
+	(source $(VENV)/bin/activate && bash)
