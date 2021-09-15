@@ -43,7 +43,7 @@ function run() {
         git config --global user.name "GitHub CI Workflow"
         git config --global user.email "bryanbugyi34@gmail.com"
 
-        git commit -am "Bump version ${old_version} -> ${new_version}"
+        git commit -am "Bump version: ${old_version} → ${new_version}"
         git push
         
         git tag "${new_version}"
