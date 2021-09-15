@@ -51,14 +51,18 @@ pylint: sync-dev-requirements  ## Run pylint checks.
 	$(PYTHON) -m pylint tests
 
 .PHONY: test
-test:  sync-dev-requirements  ## Run this project's test suite.
-	$(TOX) -- \
+test: tox_args ?=
+test: sync-dev-requirements  ## Run this project's test suite.
+	$(TOX) $(tox_args) -- \
 		-vv \
 		--cov \
 		--cov-fail-under=80 \
 		--cov-branch \
 		--doctest-modules \
 		--doctest-report ndiff
+
+test-%:
+	make tox_args="-e $*" test
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)

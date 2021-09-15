@@ -13,9 +13,9 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install dependencies.
+      - name: Install Dependencies
         run: |
-          python -m pip install -U pip
+          python -m pip install -U pip docker-compose
 
       - name: Cleanup test artifacts from previous runs.
         run: |
