@@ -1,3 +1,9 @@
+.DELETE_ON_ERROR:
+.SHELLFLAGS := -eu -o pipefail -c
+.SUFFIXES:
+MAKEFLAGS += --warn-undefined-variables
+SHELL := /bin/bash
+
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
