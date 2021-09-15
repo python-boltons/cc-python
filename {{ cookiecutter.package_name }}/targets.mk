@@ -52,7 +52,7 @@ pylint: sync-dev-requirements  ## Run pylint checks.
 
 .PHONY: test
 test:  sync-dev-requirements  ## Run this project's test suite.
-	$(TOX) -e py -- \
+	$(TOX) -- \
 		-vv \
 		--cov \
 		--cov-fail-under=80 \
