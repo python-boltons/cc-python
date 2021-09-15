@@ -7,7 +7,7 @@ SHELL := /bin/bash
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
-PYTHON = $(SOURCE_VENV) PYTHONPATH=$(PWD)/src:$(PYTHONPATH) python
+PYTHON = $(SOURCE_VENV) PYTHONPATH=$(shell pwd)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
 SOURCE_VENV = source $(VENV_ACTIVATE);
 TOX = $(SOURCE_VENV) tox

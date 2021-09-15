@@ -2,6 +2,7 @@
 pytest
 pytest-cov
 tox
+tox-pyenv
 typeguard
 
 ### Lint

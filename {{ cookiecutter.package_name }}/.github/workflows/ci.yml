@@ -3,30 +3,33 @@ on:  # yamllint disable-line rule:truthy
   push:
     branches: [master]
   pull_request:
+env:
+  USE_DOCKER: true
 jobs:
   test:
     runs-on: ["{% raw %}${{ matrix.os }}{% endraw %}"]
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.7", "3.8", "3.9"]
         os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: Set up Python {% raw %}${{ matrix.python-version }}{% endraw %}.
+      - name: Set up Python
         uses: actions/setup-python@v2
-        with:
-          python-version: "{% raw %}${{ matrix.python-version }}{% endraw %}"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install -U pip docker-compose
 
       - name: Unit tests
         run: |
           make test
 
       - name: Publish coverage to codecov.io.
-        if: matrix.python-version == '3.9' && ! env.ACT
+        if: ${% raw %}{{ !env.ACT }}{% endraw %}
         run: |
           python -m pip install -U coverage
           bash <(curl -s https://codecov.io/bash) -cF python
@@ -37,8 +40,10 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v2
-        with:
-          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install -U pip docker-compose
 
       - name: Run linters.
         run: |
