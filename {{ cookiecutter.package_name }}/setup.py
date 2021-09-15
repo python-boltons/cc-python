@@ -60,6 +60,6 @@ setup(
     test_suite="tests",
     tests_require=tests_require(),
     url="https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}",
-    version="0.0.1",
+    use_scm_version=True,
     zip_safe=False,
 )
