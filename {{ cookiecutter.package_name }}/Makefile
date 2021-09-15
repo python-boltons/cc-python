@@ -11,4 +11,4 @@ MAKE_CMD := docker volume create docker-python-cache; docker-compose run --rm {{
 
 .PHONY: help
 help:  ## Print this message.
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' targets.mk $(MAKEFILE_LIST) | sort
