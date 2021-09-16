@@ -84,7 +84,8 @@ $(VENV_ACTIVATE):
 	$(PIP) install -U pip pip-tools
 
 .PHONY: build
-build:
+build: sync-dev-requirements
+build:  ## Build python package using setuptools.
 	$(PYTHON) setup.py build
 	$(PYTHON) setup.py sdist
 	$(PYTHON) setup.py bdist_wheel
