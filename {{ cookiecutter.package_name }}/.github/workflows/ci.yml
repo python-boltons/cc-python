@@ -48,9 +48,28 @@ jobs:
       - name: Run linters.
         run: |
           make lint
+  check_cc_and_requirements:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+
+      - name: Check that requirements are up-to-date.
+        run: |
+          make check-requirements
+
+      - name: Check that this project is up-to-date with cookiecutter.
+        run: |
+          make check-cc
 
   publish:
     runs-on: [ubuntu-latest]
+    needs:
+      - check_cc_and_requirements
+      - lint
+      - test
     steps:
       - uses: actions/checkout@v2
 
