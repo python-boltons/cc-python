@@ -5,12 +5,16 @@ MAKEFLAGS += --warn-undefined-variables
 SHELL := /bin/bash
 
 CRUFT = $(PYTHON) -m cruft
+DOCS_SOURCE := ./docs/source
+DOCS_BUILD_DIR := ./docs/build
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
 PYTHON = $(SOURCE_VENV) PYTHONPATH=$(shell pwd)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
 SOURCE_VENV = source $(VENV_ACTIVATE);
+SPHINX_APIDOC = $(SOURCE_VENV) sphinx-apidoc
+SPHINX_BUILD = $(SOURCE_VENV) sphinx-build
 TOX = $(SOURCE_VENV) tox
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
@@ -20,7 +24,8 @@ define sync_dev_requirements
 endef
 
 .PHONY: all
-all: lint test  ## Run all tests and linters.
+all:  ## Build the package, build the docs, run all tests, and run all linters.
+all: build build-docs lint test
 
 .PHONY: lint
 lint: black isort pydocstyle flake8 mypy pylint ## Run all linting checks.
@@ -78,6 +83,12 @@ $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
 	$(PIP) install -U pip pip-tools
 
+.PHONY: build
+build:
+	$(PYTHON) setup.py build
+	$(PYTHON) setup.py sdist
+	$(PYTHON) setup.py bdist_wheel
+
 requirements%.txt: export CUSTOM_COMPILE_COMMAND="make update-requirements"
 requirements%.txt: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --output-file=requirements-dev.txt requirements.in requirements-dev.in
@@ -127,3 +138,25 @@ endif
 update-cc: sync-dev-requirements
 update-cc: ## Update the project to the latest version of the cookiecutter
 	$(CRUFT) update --not-strict -c master
+
+.PHONY: clean
+clean: ## Remove build artifacts.
+clean: docs-clean
+	$(RM) -r build/*
+	$(RM) MANIFEST
+	$(RM) -r dist/*
+	$(RM) -r .pytest_cache
+	$(RM) -r .coverage
+	$(RM) -r .mypy_cache
+	$(RM) -r $(package).egg-info
+	find . -type d -name '__pycache__' -exec rm -rf {} +
+	find . -type f -name '*.pyc' -exec rm -rf {} +
+
+.PHONY: docs-clean
+docs-clean: sync-dev-requirements
+	$(SPHINX_BUILD) -M clean $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
+
+.PHONY: build-docs
+build-docs: sync-dev-requirements docs-clean
+	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_name }}
+	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
