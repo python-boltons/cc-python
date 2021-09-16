@@ -15,6 +15,10 @@ TOX = $(SOURCE_VENV) tox
 VENV := .venv
 VENV_ACTIVATE = $(VENV)/bin/activate
 
+define sync_dev_requirements
+	$(PIP_SYNC) requirements-dev.txt
+endef
+
 .PHONY: all
 all: lint test  ## Run all tests and linters.
 
@@ -81,7 +85,7 @@ requirements%.txt: $(VENV_ACTIVATE)
 
 .PHONY: sync-dev-requirements
 sync-dev-requirements: requirements-dev.txt
-	$(PIP_SYNC) requirements-dev.txt
+	$(call sync_dev_requirements)
 
 .PHONY: update-requirements
 update-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
@@ -89,7 +93,7 @@ update-requirements: ## Update all requirements to latest versions.
 update-requirements: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --upgrade --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
-	make sync-dev-requirements
+	$(call sync_dev_requirements)
 
 .PHONY: check-requirements
 check-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
