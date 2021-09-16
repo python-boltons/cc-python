@@ -53,7 +53,7 @@ pylint: sync-dev-requirements  ## Run pylint checks.
 .PHONY: test
 test: tox_args ?=
 test: sync-dev-requirements  ## Run this project's test suite.
-	$(TOX) $(tox_args) -p 3 -- \
+	$(TOX) $(tox_args) -- \
 		-vv \
 		--cov \
 		--cov-fail-under=80 \
