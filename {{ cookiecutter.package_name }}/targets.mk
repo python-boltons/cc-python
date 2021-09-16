@@ -90,6 +90,11 @@ build:  ## Build python package using setuptools.
 	$(PYTHON) setup.py sdist
 	$(PYTHON) setup.py bdist_wheel
 
+.PHONY: build-docs
+build-docs: sync-dev-requirements docs-clean
+	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_name }}
+	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
+
 requirements%.txt: export CUSTOM_COMPILE_COMMAND="make update-requirements"
 requirements%.txt: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --output-file=requirements-dev.txt requirements.in requirements-dev.in
@@ -156,8 +161,3 @@ clean: docs-clean
 .PHONY: docs-clean
 docs-clean: sync-dev-requirements
 	$(SPHINX_BUILD) -M clean $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
-
-.PHONY: build-docs
-build-docs: sync-dev-requirements docs-clean
-	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_name }}
-	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
