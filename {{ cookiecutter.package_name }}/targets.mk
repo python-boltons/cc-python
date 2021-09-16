@@ -117,9 +117,9 @@ dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environ
 .PHONY: check-cc
 check-cc: sync-dev-requirements
 ifdef CC_REPO_URL
-	@test -f .cruft.json && sed -i.bak 's#"template":.*#"template": "$(CC_REPO_URL)",#' .cruft.json && $(RM) .cruft.json.bak
+	test -f .cruft.json && sed -i.bak 's#"template":.*#"template": "$(CC_REPO_URL)",#' .cruft.json && $(RM) .cruft.json.bak
 endif
-	@$(CRUFT) check --not-strict && \
+	$(CRUFT) check --not-strict && \
 	echo "Project is up-to-date." || \
 	{ echo "Your project is out of sync with the cookiecutter. Run 'make update-cc' to update your project." ; exit 1; }
 
