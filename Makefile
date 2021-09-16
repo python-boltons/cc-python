@@ -21,7 +21,7 @@ test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs t
 
 test-%: $(VENV_ACTIVATE)
 	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
-	cd build/$* && make use-docker && make all && make check-requirements && make check-cc
+	cd build/$* && make use-docker && make all && make check-requirements && CC_REPO_URL=https://github.com/bbugyi200/cc-python make check-cc
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
