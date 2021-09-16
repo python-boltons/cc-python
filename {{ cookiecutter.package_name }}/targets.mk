@@ -61,6 +61,11 @@ test: sync-dev-requirements  ## Run this project's test suite.
 		--doctest-modules \
 		--doctest-report ndiff
 
+# Test a single python version.
+#
+# Examples:
+#   // run tests on python3.8 _only_
+#   make test-py38
 test-%:
 	make tox_args="-e $*" test
 
