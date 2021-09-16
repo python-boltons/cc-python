@@ -11,7 +11,8 @@ services:
       - venv:/{{ cookiecutter.package_name }}/.venv
       - docker-python-cache:/root/.cache/
     working_dir: /{{ cookiecutter.package_name }}
-    environment: []
+    environment:
+      - CC_REPO_URL
 volumes:
   docker-python-cache:
     external: true

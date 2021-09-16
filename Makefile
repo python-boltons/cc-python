@@ -19,9 +19,10 @@ help:  ## Print this message.
 .PHONY: test
 test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs tests by generating projects using this cookiecutter.
 
+test-%: export CC_REPO_URL=https://github.com/bbugyi200/cc-python
 test-%: $(VENV_ACTIVATE)
 	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
-	cd build/$* && make use-docker && make all && make check-requirements && CC_REPO_URL=https://github.com/bbugyi200/cc-python make check-cc
+	cd build/$* && make use-docker && make all && make check-requirements && make check-cc
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
