@@ -15,4 +15,5 @@ pylint
 
 ### Miscellaneous
 bump2version
+cruft[pyproject]
 pip-tools

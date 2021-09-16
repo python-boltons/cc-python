@@ -4,6 +4,7 @@
 MAKEFLAGS += --warn-undefined-variables
 SHELL := /bin/bash
 
+CRUFT = $(PYTHON) -m cruft
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
@@ -90,6 +91,32 @@ update-requirements: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	make sync-dev-requirements
 
+.PHONY: check-requirements
+check-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
+check-requirements: sync-dev-requirements
+check-requirements: ## Check if requirements*.txt files are up-to-date.
+	@echo "Checking requirements..."
+	$(eval REQ_TEMPDIR := $(shell mktemp -d))
+	$(PIP_COMPILE) --output-file=$(REQ_TEMPDIR)/requirements-dev.txt requirements.in requirements-dev.in
+	$(PIP_COMPILE) --output-file=$(REQ_TEMPDIR)/requirements.txt requirements.in
+	@diff requirements-dev.txt $(REQ_TEMPDIR)/requirements-dev.txt && \
+	diff requirements.txt $(REQ_TEMPDIR)/requirements.txt || \
+	{ echo "Requirements are not up-to-date: run 'make update-requirements' to fix them."; \
+	echo "Expected requirements.txt:"; cat $(REQ_TEMPDIR)/requirements.txt; \
+	echo "Expected requirements-dev.txt:"; cat $(REQ_TEMPDIR)/requirements-dev.txt; \
+	exit 1; }
+
 .PHONY: dev-shell
 dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
 	(source $(VENV)/bin/activate && bash)
+
+.PHONY: check-cc
+check-cc: sync-dev-requirements
+	@$(CRUFT) check --not-strict && \
+	echo "Project is up-to-date." || \
+	{ echo "Your project is out of sync with the cookiecutter. Run 'make update-cc' to update your project." ; exit 1; }
+
+.PHONY: update-cc
+update-cc: sync-dev-requirements
+update-cc: ## Update the project to the latest version of the cookiecutter
+	$(CRUFT) update --not-strict -c master
