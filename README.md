@@ -10,8 +10,8 @@ projects.
 This section provides a demonstration of initializing a new cc-python project,
 say `foobar`, using this cookiecutter repo.
 
-We must first create a new repo under the [bbugyi200] organization using
-GitHub. We then use [cruft] to initialize a new project using this
+We must first create a new repository under the [bbugyi200] organization using
+GitHub. We then use [cruft][3] to initialize a new project using this
 cookiecutter. Before we can do that, we need to install cruft (we recommend
 using [pipx] for this):
 
@@ -71,7 +71,7 @@ Dealing with `cruft update` conflicts can be tricky at the moment (see the note
 below). When the `cruft update` command is unable to merge a subset of the new
 cookiecutter changes into the current project, it reports the conflicts to
 STDOUT and then either creates a merge conflict (in which case you just resolve
-the conflict as you would any other) _or_ it creates a [.rej] file for every
+the conflict as you would any other) _or_ it creates a [.rej][4] file for every
 file that contained unmergable changes. The latter case requires special
 treatment since these changes will need to be merged manually. An example of
 how I would go about merging these changes manually is shown below:
@@ -92,8 +92,7 @@ find . -type f -name '*.rej' -delete
 > **NOTE**: There is currently a proposal (see [cruft#49]) to improve the way
 > the `cruft update` command handles conflicts.
 
-[cruft#49]: https://github.com/cruft/cruft/issues/49
-[.rej]: https://stackoverflow.com/questions/34585865/what-are-rej-files-which-are-created-during-merge
-
 [1]: https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows
 [2]: https://docs.readthedocs.io/en/stable/
+[3]: https://github.com/cruft/cruft/issues/49
+[4]: https://stackoverflow.com/questions/34585865/what-are-rej-files-which-are-created-during-merge
