@@ -23,3 +23,4 @@ recommonmark
 bump2version
 cruft[pyproject]
 pip-tools
+setuptools_scm
