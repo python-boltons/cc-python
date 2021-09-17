@@ -23,6 +23,16 @@ define sync_dev_requirements
 	$(PIP_SYNC) requirements-dev.txt
 endef
 
+define runtests
+	$(TOX) -e $(1) -- \
+		-vv \
+		--cov \
+		--cov-fail-under=80 \
+		--cov-branch \
+		--doctest-modules \
+		--doctest-report ndiff
+endef
+
 .PHONY: all
 all:  ## Build the package, build the docs, run all tests, and run all linters.
 all: build build-docs lint test
@@ -61,15 +71,8 @@ pylint: sync-dev-requirements  ## Run pylint checks.
 	$(PYTHON) -m pylint tests
 
 .PHONY: test
-test: tox_args ?=
 test: sync-dev-requirements  ## Run this project's test suite.
-	$(TOX) $(tox_args) -- \
-		-vv \
-		--cov \
-		--cov-fail-under=80 \
-		--cov-branch \
-		--doctest-modules \
-		--doctest-report ndiff
+	$(call runtests,ALL)
 
 # Test a single python version.
 #
@@ -77,7 +80,7 @@ test: sync-dev-requirements  ## Run this project's test suite.
 #   // run tests on python3.8 _only_
 #   make test-py38
 test-%:
-	make tox_args="-e $*" test
+	$(call runtests,$*)
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
