@@ -1,2 +1,1 @@
-*.swp
-*.swo
+{{ cookiecutter.git_repo_name }}/.gitignore
