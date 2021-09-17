@@ -1,4 +1,6 @@
 {
+    "github_username": "bbugyi200",
+    "git_org_name": "{{ cookiecutter.github_username }}",
     "git_repo_name": "",
     "package_name": "{{ cookiecutter.git_repo_name|trim|lower|replace('-', '_') }}",
     "package_description": "A python package for {{ cookiecutter.package_name }}.",

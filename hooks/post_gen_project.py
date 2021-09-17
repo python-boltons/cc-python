@@ -5,7 +5,7 @@ from subprocess import PIPE
 
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-GITHUB_URL = "git@github.com:bbugyi200/{}.git".format
+GITHUB_URL = "git@github.com:{{ cookiecutter.git_org_name }}/{}.git".format
 
 
 def create_git_repo(package_name: str) -> None:

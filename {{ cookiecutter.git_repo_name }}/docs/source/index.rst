@@ -16,4 +16,4 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
 References
 ==========
 
-- `github:bbugyi200/{{ cookiecutter.git_repo_name }} <https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}>`_
+- `github:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }} <https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}>`_

@@ -59,7 +59,7 @@ setup(
     packages=find_namespace_packages(where="src"),
     test_suite="tests",
     tests_require=tests_require(),
-    url="https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}",
+    url="https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}",
     use_scm_version={"fallback_version": "0.0.1"},
     zip_safe=False,
 )

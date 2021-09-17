@@ -8,12 +8,13 @@ projects.
 ## Initializing a New Project using this cookiecutter
 
 This section provides a demonstration of initializing a new cc-python project,
-say `foobar`, using this cookiecutter repo.
+say `foobar`, under some github organization, say `org`, using this
+cookiecutter repo.
 
-We must first create a new repository under the [bbugyi200] organization using
-GitHub. We then use [cruft][3] to initialize a new project using this
+We must first create a new repository under the [org][5] organization using
+GitHub. We then use [cruft][6] to initialize a new project using this
 cookiecutter. Before we can do that, we need to install cruft (we recommend
-using [pipx] for this):
+using [pipx][7] for this):
 
 ```bash
 # install and setup pipx
@@ -49,13 +50,10 @@ outside world. Namely, we need to:
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
   publish to PyPI. We can accomplish this by going to the following link (look
   [here][1] for more information on this step):
-  https://github.com/bbugyi200/foobar/settings/secrets/actions
+  https://github.com/org/foobar/settings/secrets/actions
 * [Import](https://readthedocs.org/dashboard/) the `foobar` project from
   [readthedocs][2].
 
-[bbugyi200]: https://github.com/bbugyi200?tab=repositories
-[cruft]: https://github.com/cruft/cruft
-[pipx]: https://github.com/pypa/pipx
 
 ## How to Propagate Changes to All Cookiecutter Projects
 
@@ -89,10 +87,14 @@ vim $(find . -type f -name '*.rej')
 find . -type f -name '*.rej' -delete
 ```
 
-> **NOTE**: There is currently a proposal (see [cruft#49]) to improve the way
+> **NOTE**: There is currently a proposal (see [cruft#49][3]) to improve the way
 > the `cruft update` command handles conflicts.
+
 
 [1]: https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows
 [2]: https://docs.readthedocs.io/en/stable/
 [3]: https://github.com/cruft/cruft/issues/49
 [4]: https://stackoverflow.com/questions/34585865/what-are-rej-files-which-are-created-during-merge
+[5]: https://github.com/bbugyi200?tab=repositories
+[6]: https://github.com/cruft/cruft
+[7]: https://github.com/pypa/pipx
