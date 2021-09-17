@@ -103,7 +103,7 @@ python -m pytest -k "included_test or not excluded"
 
 </details>
 
-<details><summary>📄 Publish docs from a local version</summary>
+<details><summary>📄 Build and view docs from a local version</summary>
 
 You can generate docs locally by running `make build-docs`.
 You can then see the generated docs by running
