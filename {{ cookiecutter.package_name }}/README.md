@@ -2,12 +2,12 @@
 
 **{{ cookiecutter.package_description }}**
 
-# TODO: Add cc-python badge.
 [![CI Workflow](https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/bbugyi200/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/bbugyi200/{{ cookiecutter.git_repo_name }})
 [![Documentation](https://img.shields.io/badge/documentation-RTD-ffa500)](https://{{ cookiecutter.package_name }}.readthedocs.io/en/latest/)
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
+[![cc-python Version](https://img.shields.io/static/v1?label=cc-python&message=2021.09.13-1&color=3b3bff)](https://github.com/bbugyi200/cc-python)
 [![Package Health](https://snyk.io/advisor/python/{{ cookiecutter.package_name }}/badge.svg)](https://snyk.io/advisor/python/{{ cookiecutter.package_name }})
 
 tools / frameworks used by test suite:
