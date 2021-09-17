@@ -130,10 +130,6 @@ check-requirements: ## Check if requirements*.txt files are up-to-date.
 	echo "Expected requirements-dev.txt:"; cat $(REQ_TEMPDIR)/requirements-dev.txt; \
 	exit 1; }
 
-.PHONY: dev-shell
-dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
-	(source $(VENV)/bin/activate && bash)
-
 .PHONY: check-cc
 check-cc: sync-dev-requirements
 ifdef CC_REPO_URL
@@ -164,3 +160,7 @@ clean: docs-clean
 .PHONY: docs-clean
 docs-clean: sync-dev-requirements
 	$(SPHINX_BUILD) -M clean $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
+
+.PHONY: dev-shell
+dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
+	(source $(VENV)/bin/activate && bash)
