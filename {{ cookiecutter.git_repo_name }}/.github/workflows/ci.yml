@@ -1,7 +1,6 @@
 name: CI Pipeline
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: [master]
   pull_request:
 env:
   USE_DOCKER: true
