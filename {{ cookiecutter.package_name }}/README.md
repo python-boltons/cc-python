@@ -14,7 +14,7 @@ tools / frameworks used by test suite:
 [![Framework: pytest](https://img.shields.io/badge/framework-pytest-28ce4a)](https://github.com/pytest-dev/pytest)
 [![Framework: doctest](https://img.shields.io/badge/framework-doctest-28ce4a)](https://docs.python.org/3/library/doctest.html)
 [![Runner: tox](https://img.shields.io/badge/runner-tox-ffffff)](https://github.com/tox-dev/tox)
-[![Types: typeguard](https://img.shields.io/badge/types-typeguard-333333)](https://github.com/agronholm/typeguard)
+[![Types: typeguard](https://img.shields.io/badge/types-typeguard-800080)](https://github.com/agronholm/typeguard)
 
 linters used by CI:
 
