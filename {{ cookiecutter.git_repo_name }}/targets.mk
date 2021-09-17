@@ -25,8 +25,11 @@ endef
 define runtests
 	$(TOX) -e $(1) -- \
 		-vv \
-		--cov \
+		--cov=. \
+		--cov-config=setup.cfg \
 		--cov-fail-under=80 \
+		--cov-report=xml:coverage.xml \
+		--cov-report=term-missing \
 		--cov-branch \
 		--doctest-modules \
 		--doctest-report ndiff
