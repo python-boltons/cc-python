@@ -98,6 +98,10 @@ build-docs: sync-dev-requirements docs-clean
 	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_name }}
 	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
 
+.PHONY: docs-clean
+docs-clean: sync-dev-requirements
+	$(SPHINX_BUILD) -M clean $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
+
 requirements%.txt: export CUSTOM_COMPILE_COMMAND="make update-requirements"
 requirements%.txt: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --output-file=requirements-dev.txt requirements.in requirements-dev.in
@@ -144,6 +148,10 @@ update-cc: sync-dev-requirements
 update-cc: ## Update the project to the latest version of the cookiecutter
 	$(CRUFT) update --not-strict -c master
 
+.PHONY: dev-shell
+dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
+	(source $(VENV)/bin/activate && bash)
+
 .PHONY: clean
 clean: ## Remove build artifacts.
 clean: docs-clean
@@ -156,11 +164,3 @@ clean: docs-clean
 	$(RM) -r $(package).egg-info
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	find . -type f -name '*.pyc' -exec rm -rf {} +
-
-.PHONY: docs-clean
-docs-clean: sync-dev-requirements
-	$(SPHINX_BUILD) -M clean $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
-
-.PHONY: dev-shell
-dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
-	(source $(VENV)/bin/activate && bash)
