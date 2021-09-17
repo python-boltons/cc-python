@@ -10,7 +10,6 @@ DOCS_BUILD_DIR := ./docs/build
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
-PIP_TOOLS_EXISTS = $(VENV)/lib/python3.9/site-packages/piptools
 PYTHON = $(SOURCE_VENV) PYTHONPATH=$(shell pwd)/src:$(PYTHONPATH) python
 PYTHONPATH ?=
 SOURCE_VENV = source $(VENV_ACTIVATE);
@@ -83,7 +82,7 @@ test: sync-dev-requirements  ## Run this project's test suite.
 test-%:
 	$(call runtests,$*)
 
-$(PIP_TOOLS_EXISTS):
+$(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
 	$(PIP) install -U pip pip-tools
 
@@ -100,7 +99,7 @@ build-docs: sync-dev-requirements docs-clean
 	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
 
 requirements%.txt: export CUSTOM_COMPILE_COMMAND="make update-requirements"
-requirements%.txt: $(PIP_TOOLS_EXISTS)
+requirements%.txt: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --output-file=requirements.txt requirements.in
 
@@ -111,7 +110,7 @@ sync-dev-requirements: requirements-dev.txt
 .PHONY: update-requirements
 update-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
 update-requirements: ## Update all requirements to latest versions.
-update-requirements: $(PIP_TOOLS_EXISTS)
+update-requirements: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --upgrade --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	$(call sync_dev_requirements)
