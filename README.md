@@ -40,7 +40,7 @@ make use-docker
 make all
 git add -v --all
 git commit -m "First commit."
-git push origin master
+git push -u origin master
 ```
 
 [bbugyi200]: https://github.com/bbugyi200?tab=repositories
