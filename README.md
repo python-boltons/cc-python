@@ -36,6 +36,7 @@ project to the repo you created earlier via GitHub's web interface:
 
 ```bash
 cd foobar
+make use-docker
 make all
 git add -v --all
 git commit -m "First commit."
