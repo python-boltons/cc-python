@@ -37,7 +37,6 @@ project to the repo you created earlier via GitHub's web interface:
 ```bash
 cd foobar
 make all
-git init
 git add -v --all
 git commit -m "First commit."
 git push origin master

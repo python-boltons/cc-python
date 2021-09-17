@@ -2,6 +2,7 @@
 
 **{{ cookiecutter.package_description }}**
 
+# TODO: Add cc-python badge.
 [![CI Workflow](https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/bbugyi200/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/bbugyi200/{{ cookiecutter.git_repo_name }})
 [![Documentation](https://img.shields.io/badge/documentation-RTD-ffa500)](https://{{ cookiecutter.package_name }}.readthedocs.io/en/latest/)
