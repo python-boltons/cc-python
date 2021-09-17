@@ -38,7 +38,12 @@ function run() {
         return 0
     fi
 
+    # Update version contained in version.txt file.
     echo "${new_version}" > "${version_txt}"
+
+    # Update version shown on 'cc-python' README badge for geneated projects.
+    perl -i -nE "print s/cc-python&message=[^&]+&color=/cc-python&message=${new_version}&color=/gr" "./{{ cookiecutter.package_name }}/README.md"
+
     if [[ "${draft}" != true ]]; then
         git config --global user.name "GitHub CI Workflow"
         git config --global user.email "bryanbugyi34@gmail.com"
