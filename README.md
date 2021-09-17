@@ -43,6 +43,16 @@ git commit -m "First commit."
 git push -u origin master
 ```
 
+The next few steps are required to allow our new repository to talk to the
+outside world. Namely, we need to:
+
+* Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
+  publish to PyPI. We can accomplish this by going to the following link (look
+  [here][1] for more information on this step):
+  https://github.com/bbugyi200/foobar/settings/secrets/actions
+* [Import](https://readthedocs.org/dashboard/) the `foobar` project from
+  [readthedocs][2].
+
 [bbugyi200]: https://github.com/bbugyi200?tab=repositories
 [cruft]: https://github.com/cruft/cruft
 [pipx]: https://github.com/pypa/pipx
@@ -84,3 +94,6 @@ find . -type f -name '*.rej' -delete
 
 [cruft#49]: https://github.com/cruft/cruft/issues/49
 [.rej]: https://stackoverflow.com/questions/34585865/what-are-rej-files-which-are-created-during-merge
+
+[1]: https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows
+[2]: https://docs.readthedocs.io/en/stable/
