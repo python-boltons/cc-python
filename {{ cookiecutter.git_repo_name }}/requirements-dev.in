@@ -14,6 +14,7 @@ pydocstyle[toml]
 pylint
 
 ### Docs
+docutils==0.16  # HACK: see https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file
 sphinx
 sphinx-theme
 sphinx-autodoc-typehints
