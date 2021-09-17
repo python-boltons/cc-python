@@ -10,8 +10,7 @@ DOCS_BUILD_DIR := ./docs/build
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
-PYTHON = $(SOURCE_VENV) PYTHONPATH=$(shell pwd)/src:$(PYTHONPATH) python
-PYTHONPATH ?=
+PYTHON = $(SOURCE_VENV) python
 SOURCE_VENV = source $(VENV_ACTIVATE);
 SPHINX_APIDOC = $(SOURCE_VENV) sphinx-apidoc
 SPHINX_BUILD = $(SOURCE_VENV) sphinx-build
