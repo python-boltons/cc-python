@@ -14,8 +14,12 @@ def normalize_namespace_path(package_name: str, package_path: str) -> None:
     src = Path("src")
     old_dir = src / package_name
     new_dir = src / package_path
+    print(f"<locals> = {locals()}")
     if old_dir.exists() and old_dir != new_dir:
-        shutil.rmtree(new_dir, ignore_errors=True)
+        if new_dir.exists():
+            shutil.rmtree(new_dir)
+
+        new_dir.parent.mkdir(parents=True, exist_ok=True)
         shutil.move(str(old_dir), new_dir)
 
 
