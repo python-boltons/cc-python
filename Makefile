@@ -21,7 +21,6 @@ help:  ## Print this message.
 test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs tests by generating projects using this cookiecutter.
 
 test-%: export CC_REPO_URL=https://github.com/bbugyi200/cc-python
-test-%: export TEST_USER=$(USER)
 test-%: $(VENV_ACTIVATE)
 	$(RM) -rf build/$*/requirements*.txt
 	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
@@ -32,6 +31,6 @@ $(VENV_ACTIVATE):
 	$(PIP) install -U -r requirements-dev.in
 
 .PHONY: clean
+clean: ITEMS := build $(VENV)
 clean:  ## Remove all build, test, coverage and Python artifacts.
-	ITEMS=(build $(VENV)); \
-		  sudo -v && sudo rm -rf $$ITEMS[@] || rm -rf $$ITEMS[@]
+	  sudo -v && sudo rm -rf $(ITEMS) || rm -rf $(ITEMS)

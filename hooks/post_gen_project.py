@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import Path
 import subprocess
 from subprocess import PIPE
 
@@ -9,12 +10,8 @@ GITHUB_URL = "git@github.com:{{ cookiecutter.git_org_name }}/{}.git".format
 
 
 def create_git_repo(package_name: str) -> None:
-    if test_user := os.getenv("TEST_USER"):
-        print(
-            f"[TESTS ARE RUNNING | user={test_user}] We don't initialize a git"
-            " repository when this function is called by a test (e.g. by"
-            " running `make test`)."
-        )
+    if Path(".git").exists():
+        print("[WARNING]: The .git directory already exists.")
         return
 
     subprocess.run(
