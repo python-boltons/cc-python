@@ -33,4 +33,5 @@ $(VENV_ACTIVATE):
 
 .PHONY: clean
 clean:  ## Remove all build, test, coverage and Python artifacts.
-	rm -rf build $(VENV)
+	ITEMS=(build $(VENV)); \
+		  sudo -v && sudo rm -rf $$ITEMS[@] || rm -rf $$ITEMS[@]
