@@ -1,0 +1,7 @@
+default_context:
+  github_username: bbugyi200
+  git_org_name: bbugyi200
+  git_repo_name: python-lib
+  package_name: bugyi.lib
+  package_description: "My library."
+  package_type: library
