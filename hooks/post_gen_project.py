@@ -10,10 +10,10 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 GITHUB_URL = "git@github.com:{{ cookiecutter.git_org_name }}/{}.git".format
 
 
-def normalize_namespace_path(package_namespace: str) -> None:
-    if "." in package_namespace:
-        module_dir = package_namespace.replace(".", os.sep)
-        old_dir = package_namespace
+def normalize_namespace_path(package_name: str) -> None:
+    if "." in package_name:
+        module_dir = package_name.replace(".", os.sep)
+        old_dir = package_name
         new_dir = module_dir
         shutil.move(old_dir, new_dir)
 
@@ -40,7 +40,7 @@ def create_git_repo(package_name: str) -> None:
 def main() -> None:
     context = json.loads("""{{ cookiecutter | jsonify }}""")
     create_git_repo(context["git_repo_name"])
-    normalize_namespace_path(context["package_namespace"])
+    normalize_namespace_path(context["package_name"])
 
 
 if __name__ == "__main__":
