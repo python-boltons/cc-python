@@ -12,6 +12,7 @@ services:
       - docker-python-cache:/root/.cache/
     working_dir: /{{ cookiecutter.package_path }}
     environment:
+      - BETTER_EXCEPTIONS
       - CC_REPO_URL
 volumes:
   docker-python-cache:
