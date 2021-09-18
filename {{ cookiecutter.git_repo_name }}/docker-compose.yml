@@ -6,11 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/{{ cookiecutter.package_name }}:delegated
-      - build:/{{ cookiecutter.package_name }}/build
-      - venv:/{{ cookiecutter.package_name }}/.venv
+      - .:/{{ cookiecutter.package_path }}:delegated
+      - build:/{{ cookiecutter.package_path }}/build
+      - venv:/{{ cookiecutter.package_path }}/.venv
       - docker-python-cache:/root/.cache/
-    working_dir: /{{ cookiecutter.package_name }}
+    working_dir: /{{ cookiecutter.package_path }}
     environment:
       - CC_REPO_URL
 volumes:

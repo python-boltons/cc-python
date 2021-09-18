@@ -97,7 +97,7 @@ build:  ## Build python package using setuptools.
 
 .PHONY: build-docs
 build-docs: sync-dev-requirements docs-clean
-	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_name }}
+	$(SPHINX_APIDOC) -f -M -e -o $(DOCS_SOURCE) src/{{ cookiecutter.package_path }}
 	$(SPHINX_BUILD) $(DOCS_SOURCE) $(DOCS_BUILD_DIR)
 
 .PHONY: docs-clean
