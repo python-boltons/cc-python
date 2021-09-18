@@ -29,7 +29,7 @@ test-%: $(VENV_ACTIVATE) typeguard-hack
 .PHONY: typeguard-hack
 typeguard-hack:
 	# HACK: Resolves weird permission errors with typeguard files.
-	sudo -v && [[ -d build/$*/.tox ]] && sudo find build/$*/.tox -name "*-typeguard.pyc" -delete || true
+	sudo -v && [[ -d build/$*/.tox ]] && sudo find build/$* -name "*-typeguard.pyc" -delete || true
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
