@@ -12,10 +12,11 @@ GITHUB_URL = "git@github.com:{{ cookiecutter.git_org_name }}/{}.git".format
 
 def normalize_namespace_path(package_name: str) -> None:
     if "." in package_name:
+        src = Path("src")
         module_dir = package_name.replace(".", os.sep)
-        old_dir = package_name
-        new_dir = module_dir
-        shutil.move(old_dir, new_dir)
+        old_dir = src / package_name
+        new_dir = src / module_dir
+        shutil.move(str(old_dir), new_dir)
 
 
 def create_git_repo(package_name: str) -> None:
