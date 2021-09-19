@@ -7,11 +7,18 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
 
 .. toctree::
    :maxdepth: -1
-   :caption: Contents
+   :caption: Table of Contents
 
     API Reference <modules>
 
-References
-==========
+Project Links
+=============
 
 - `github:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }} <https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}>`_
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
