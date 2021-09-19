@@ -113,10 +113,6 @@ venv.bak/
 # Vim swap files
 .*.sw?
 
-# rst files
-docs/source/modules.rst
-docs/source/{{ cookiecutter.package_name }}*.rst
-
 # Project docker switch file
 .lcldev
 
