@@ -81,7 +81,7 @@ test: sync-dev-requirements  ## Run this project's test suite.
 # Examples:
 #   // run tests on python3.8 _only_
 #   make test-py38
-test-%:
+test-%: sync-dev-requirements
 	$(call runtests,$*)
 
 $(VENV_ACTIVATE):
