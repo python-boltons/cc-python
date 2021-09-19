@@ -16,7 +16,7 @@ Project Links
 
 - `github:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }} <https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}>`_
 
-Indices and tables
+Indices and Tables
 ==================
 
 * :ref:`genindex`
