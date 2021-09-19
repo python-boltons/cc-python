@@ -1,9 +1,12 @@
 # Changelog for the `cc-python` cookiecutter
 
-All notable changes to this project will be documented in this file. This
-file's format is based on [Keep a Changelog].
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog], and this project uses
+[Calendar Versioning].
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
+[Calendar Versioning]: https://calver.org/
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.19...HEAD)
 
