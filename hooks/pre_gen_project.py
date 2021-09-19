@@ -13,7 +13,7 @@ import json
 
 def main() -> None:
     context = json.loads("""{{ cookiecutter | jsonify }}""")
-    print(f"context = {context}")
+    del context  # this entire function is just a placeholder ATM
 
 
 if __name__ == "__main__":
