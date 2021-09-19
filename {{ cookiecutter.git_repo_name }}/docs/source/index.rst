@@ -9,8 +9,6 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
    :maxdepth: -1
    :caption: Contents
 
-
-    Example Markdown <example.md>
     API Reference <modules>
 
 References

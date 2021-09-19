@@ -35,35 +35,36 @@ extensions = [
     "sphinx_autodoc_typehints",
     "recommonmark",
 ]
+
 source_suffix = {".rst": "restructuredtext", ".md": "markdown"}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
+
+# -- napolean extension settings ---------------------------------------------
+napoleon_google_docstring = True
+napoleon_use_admonition_for_examples = True
+
+# -- autodoc_typehints extension settings ------------------------------------
+autodoc_typehints = "none"
+always_document_param_types = True
+add_module_names = False
+typehints_fully_qualified = False
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-napoleon_google_docstring = True
-napoleon_use_admonition_for_examples = True
-# We are using the typehints extension instead of the
-# default autodoc type hints as they allow disabling
-# fully qualified names which can get very ugly for
-# type hints.
-autodoc_typehints = "none"
-always_document_param_types = True
-add_module_names = False
-typehints_fully_qualified = False
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-
-# -- Sphinx themes -----------------------------------------------------------
-html_theme = "sphinx_rtd_theme"
+html_static_path = ['_static']
