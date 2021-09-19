@@ -68,9 +68,8 @@ jobs:
   publish:
     runs-on: [ubuntu-latest]
     needs:
-      - check_cc_and_requirements
-      - lint
       - test
+      - lint
     steps:
       - uses: actions/checkout@v2
         with:
