@@ -48,9 +48,11 @@ Finally, these last few steps are required to allow our new repository to talk
 to the outside world. Namely, we need to:
 
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
-  publish to PyPI. We can accomplish this by going to the following link (see
-  [this guide][1] for more information on this step):
-  https://github.com/org/foobar/settings/secrets/actions
+  publish to PyPI. We can accomplish this by going to the following link
+  (remember to replace `org` and `foobar` with the actual organization and
+  repository names you have chosen):
+  https://github.com/org/foobar/settings/secrets/actions  (see [this guide][1]
+  for more information on this step)
 * [Import](https://readthedocs.org/dashboard/) the `foobar` project from
   [readthedocs][2].
 
