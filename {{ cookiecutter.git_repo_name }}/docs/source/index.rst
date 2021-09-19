@@ -1,7 +1,7 @@
 .. {{ cookiecutter.package_name }}
 
 Welcome to {{ cookiecutter.package_name }}'s documentation!
-===================================
+============================{{ '=' * cookiecutter.package_name.__len__() }}
 
 {{ cookiecutter.package_description }}
 
