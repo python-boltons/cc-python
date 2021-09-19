@@ -80,7 +80,7 @@ jobs:
         uses: actions/setup-python@v2
       - name: Install pypa/build
         run: |
-          python -m pip install --user build
+          python -m pip install --user build setuptools_scm
 
       - name: Build a binary wheel and a source tarball
         run: |
