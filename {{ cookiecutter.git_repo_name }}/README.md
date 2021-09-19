@@ -29,7 +29,7 @@ linters used by CI:
 
 ## Useful Links
 
-* [API Reference][3]: A development reference of the API exposed by this
+* [API Reference][3]: A developer's reference of the API exposed by this
   project.
 * [cc-python][4]: The [cookiecutter][5] that was used to generate this project.
   Furthermore, changes made to this cookiecutter are periodically synced with
