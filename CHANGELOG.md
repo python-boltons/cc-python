@@ -5,7 +5,11 @@ file's format is based on [Keep a Changelog].
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 
-## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.17...HEAD)
+## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.19...HEAD)
+
+No notable changes have been made.
+
+## [2021.09.19](https://github.com/bbugyi200/cc-python/compare/2021.09.17...2021.09.19)
 
 ### Add
 
