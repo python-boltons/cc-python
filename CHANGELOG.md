@@ -7,7 +7,13 @@ file's format is based on [Keep a Changelog].
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.17...HEAD)
 
-No notable changes have been made.
+### Add
+
+* Version badge to cc-python README.
+
+### Miscellaneous
+
+* Test release to ensure version badge on cc-python README is updated.
 
 ## [2021.09.17](https://github.com/bbugyi200/cc-python/compare/2021.09.13-1...2021.09.17)
 
