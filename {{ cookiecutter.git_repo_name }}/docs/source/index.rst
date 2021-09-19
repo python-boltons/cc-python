@@ -15,8 +15,8 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
     CONTRIBUTING <CONTRIBUTING.md>
     README <README.md>
 
-Project Links
-=============
+Useful Links
+============
 
 * `cc-python <https://github.com/bbugyi200/cc-python>`_: The [cookiecutter][5] that was used to
   generate this project. Changes made to this cookiecutter are periodically synced with this

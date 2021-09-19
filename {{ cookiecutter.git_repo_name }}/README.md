@@ -27,7 +27,7 @@ linters used by CI:
 [![Imports: isort](https://img.shields.io/badge/imports-isort-ef8336)](https://github.com/PyCQA/isort)
 
 
-## Project Links
+## Useful Links
 
 * [API Reference][3]: A development reference of the API exposed by this
   project.
