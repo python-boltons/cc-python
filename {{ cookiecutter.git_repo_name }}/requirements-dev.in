@@ -14,10 +14,10 @@ pydocstyle[toml]
 pylint
 
 ### Docs
+m2r2
 sphinx
 sphinx-rtd-theme
 sphinx-autodoc-typehints
-recommonmark
 
 ### Misc
 bump2version

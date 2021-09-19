@@ -26,6 +26,22 @@ linters used by CI:
 [![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/imports-isort-ef8336)](https://github.com/PyCQA/isort)
 
+
+## Project Links
+
+* [API Reference][3]: A development reference of the API exposed by this
+  project.
+* [cc-python][4]: This [cookiecutter][5] was used to generate this project.
+  Furthermore, changes made to this cookiecutter are periodically synced with
+  this project.
+* [CHANGELOG.md][2]: We use this file to document all notable changes made to
+  this project.
+* [CONTRIBUTING.md][7]: This document contains guidelines for developers
+  interested in contributing to this project.
+* [Documentation][1]: This project's documentation is hosted on
+  [readthedocs.io][6].
+
+
 ## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation
 
 ### 🔢 Basic Usage
@@ -121,6 +137,15 @@ and going to http://localhost:8000/
 This project is enabled with `cruft` to be able to update the template with any improvements made in the cc-python cookie cutter which generated it.
 
 * `make check-cc` will report if this project is up to date or out of sync with the cookiecutter.
-* `make update-cc` will update this project to be in sync with the cc-python-project cookiecutter. This can give improvements or new features which are added to the template after this project was created. Note one should do this on a clean branch. After running this it is a good idea to run `make all` to rebuild everything and ensure things still work after the update.
+* `make update-cc` will update this project to be in sync with the cc-python cookiecutter. This can give improvements or new features which are added to the template after this project was created. Note one should do this on a clean branch. After running this it is a good idea to run `make all` to rebuild everything and ensure things still work after the update.
 
 </details>
+
+
+[1]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest
+[2]: https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
+[3]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest/modules.html
+[4]: https://github.com/bbugyi200/cc-python
+[5]: https://github.com/cookiecutter/cookiecutter
+[6]: https://docs.readthedocs.io/en/stable/
+[7]: https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/blob/master/CONTRIBUTING.md
