@@ -11,7 +11,6 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
 
     API Reference <modules>
     CHANGELOG <CHANGELOG.md>
-    CODE_OF_CONDUCT <CODE_OF_CONDUCT.md>
     CONTRIBUTING <CONTRIBUTING.md>
     README <README.md>
 
