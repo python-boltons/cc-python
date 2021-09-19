@@ -11,7 +11,7 @@ No notable changes have been made.
 
 ## [2021.09.19](https://github.com/bbugyi200/cc-python/compare/2021.09.17...2021.09.19)
 
-### Add
+### Added
 
 * Version badge to cc-python README.
 
@@ -21,7 +21,7 @@ No notable changes have been made.
 
 ## [2021.09.17](https://github.com/bbugyi200/cc-python/compare/2021.09.13-1...2021.09.17)
 
-### Add
+### Added
 
 * Added cc-python badge to README of generated projects.
 
