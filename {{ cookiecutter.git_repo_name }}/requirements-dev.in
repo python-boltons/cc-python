@@ -1,6 +1,8 @@
 ### Tests
 pytest
 pytest-cov
+pytest-mock
+syrupy
 tox
 tox-pyenv
 typeguard
