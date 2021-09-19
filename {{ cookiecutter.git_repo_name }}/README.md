@@ -7,7 +7,7 @@
 [![Docs: RTD](https://img.shields.io/badge/docs-RTD-ffa500)](https://{{ cookiecutter.package_name }}.readthedocs.io/en/latest/)
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
-[![cc-python Version](https://img.shields.io/static/v1?label=cc-python&message=2021.09.17&color=b4b400)](https://github.com/bbugyi200/cc-python)
+[![cc-python Version](https://img.shields.io/static/v1?label=cc-python&message=2021.09.19-1&color=b4b400)](https://github.com/bbugyi200/cc-python)
 
 tools / frameworks used by test suite:
 
