@@ -19,7 +19,7 @@ tools / frameworks used by test suite:
 [![Mocks: pytest-mock](https://img.shields.io/static/v1?label=mocks&message=pytest-mock&color=9c70d7)](https://github.com/pytest-dev/pytest-mock)
 [![Snapshots: syrupy](https://img.shields.io/static/v1?label=snapshots&message=syrupy&color=436fa8)](https://github.com/tophat/syrupy)
 
-linters used by CI:
+linters used by CI to maintain code quality:
 
 [![Linter: pylint](https://img.shields.io/badge/linter-pylint-ffff00)](https://github.com/PyCQA/pylint)
 [![Linter: flake8](https://img.shields.io/badge/linter-flake8-008080)](https://github.com/PyCQA/flake8)
@@ -27,6 +27,13 @@ linters used by CI:
 [![Docstrings: pydocstyle](https://img.shields.io/badge/docstrings-pydocstyle-AFD3E6)](https://github.com/PyCQA/pydocstyle)
 [![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/imports-isort-ef8336)](https://github.com/PyCQA/isort)
+
+tools / frameworks used to render documentation:
+
+[![Rendered By: sphinx](https://img.shields.io/badge/rendered%20by-sphinx-38c91f)](https://github.com/sphinx-doc/sphinx)
+[![Hosted On: readthedocs](https://img.shields.io/badge/hosted%20on-readthedocs-e08839)](https://docs.readthedocs.io/en/stable/)
+[![Types: sphinx-autodoc-typehints](https://img.shields.io/static/v1?label=types&message=sphinx-autodoc-types&color=9c70d7)](https://github.com/agronholm/sphinx-autodoc-typehints)
+[![Markdown: m2r2](https://img.shields.io/badge/markdown-m2r2-8e1e3d)](https://github.com/CrossNox/m2r2)
 
 
 ## Useful Links
