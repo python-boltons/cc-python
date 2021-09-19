@@ -44,12 +44,12 @@ git commit -m "First commit."
 git push -u origin master
 ```
 
-The next few steps are required to allow our new repository to talk to the
-outside world. Namely, we need to:
+Finally, these last few steps are required to allow our new repository to talk
+to the outside world. Namely, we need to:
 
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
-  publish to PyPI. We can accomplish this by going to the following link (look
-  [here][1] for more information on this step):
+  publish to PyPI. We can accomplish this by going to the following link (see
+  [this guide][1] for more information on this step):
   https://github.com/org/foobar/settings/secrets/actions
 * [Import](https://readthedocs.org/dashboard/) the `foobar` project from
   [readthedocs][2].
