@@ -40,7 +40,7 @@ tools / frameworks used to render documentation:
 [![Markdown: m2r2](https://img.shields.io/badge/markdown-m2r2-8e1e3d)](https://github.com/CrossNox/m2r2)
 
 
-## Useful Links
+## Useful Links 🔗
 
 * [API Reference][3]: A developer's reference of the API exposed by this
   project.
