@@ -16,7 +16,7 @@ version badges:
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
 [![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cc-python&message=2021.09.20&color=d4aa00&logo=cookiecutter&logoColor=d4aa00)](https://github.com/bbugyi200/cc-python)
-[![Docker: bbugyi/python](https://img.shields.io/static/v1?label=bbugyi%2Fpython&message=2021.09.16&color=8ec4ad&logo=docker&logoColor=8ec4ad)](https://hub.docker.com/layers/167607937/bbugyi/python/2021.09.16/images/sha256-f058f973afafe78d02a396737cf9ede564e2309f5b9fa94bbaaf024f60a96645?context=repo)
+[![Docker: bbugyi/python](https://img.shields.io/static/v1?label=bbugyi%2Fpython&message=2021.09.16&color=8ec4ad&logo=docker&logoColor=8ec4ad)](https://github.com/bbugyi200/docker-python)
 
 tools / frameworks used by test suite (i.e. used by `make test`):
 
