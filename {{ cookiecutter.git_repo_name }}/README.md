@@ -55,7 +55,7 @@ tools / frameworks used to render documentation:
   [readthedocs.io][6].
 
 
-## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation
+## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation 📄
 
 ### 🔢 Basic Usage
 
