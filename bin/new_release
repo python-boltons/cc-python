@@ -48,7 +48,7 @@ function run() {
     perl -i -nE "print s/${old_version_no_dots}/${new_version_no_dots}/gr" ./README.md
 
     # Update version badge for generated projects.
-    perl -i -nE "print s/cookiecutter&message=cc-python:[^&]+&color=/cookiecutter&message=cc-python:${new_version}&color=/gr" "./{{ cookiecutter.git_repo_name }}/README.md"
+    perl -i -nE "print s/cookiecutter&message=cc-python%20\|%20[^&]+&color=/cookiecutter&message=cc-python%20|%20${new_version}&color=/gr" "./{{ cookiecutter.git_repo_name }}/README.md"
 
     if [[ "${draft}" != true ]]; then
         git config --global user.name "GitHub CI Workflow"
