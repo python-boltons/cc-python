@@ -118,11 +118,6 @@ update-requirements: ## Update all requirements to latest versions.
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	$(call sync_dev_requirements)
 
-### Bootstraps virtual environment for first use.
-$(VENV_ACTIVATE):
-	python3 -m venv $(VENV)
-	$(PIP) install -U pip pip-tools
-
 .PHONY: check-requirements
 check-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
 check-requirements: sync-dev-requirements
@@ -137,6 +132,11 @@ check-requirements: ## Check if requirements*.txt files are up-to-date.
 	echo "Expected requirements.txt:"; cat $(REQ_TEMPDIR)/requirements.txt; \
 	echo "Expected requirements-dev.txt:"; cat $(REQ_TEMPDIR)/requirements-dev.txt; \
 	exit 1; }
+
+### Bootstraps virtual environment for first use.
+$(VENV_ACTIVATE):
+	python3 -m venv $(VENV)
+	$(PIP) install -U pip pip-tools
 
 .PHONY: check-cc
 check-cc: sync-dev-requirements
