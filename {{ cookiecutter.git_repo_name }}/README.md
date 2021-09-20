@@ -43,7 +43,7 @@ tools / frameworks used to render documentation (i.e used by `make build-docs`):
 [![Types: sphinx-autodoc-typehints](https://img.shields.io/static/v1?label=API&message=sphinx-autodoc-typehints&color=9c70d7)](https://github.com/agronholm/sphinx-autodoc-typehints)
 [![Markdown: m2r2](https://img.shields.io/badge/markdown-m2r2-8e1e3d)](https://github.com/CrossNox/m2r2)
 
-miscellaneous badges:
+miscellaneous tools used to maintain this project:
 
 [![Cookiecutter Updates: cruft](https://img.shields.io/badge/cc%20updates-cruft-6a4aef)](https://github.com/cruft/cruft)
 [![Requirements: pip-tools](https://img.shields.io/static/v1?label=requirements&message=pip-tools&color=a77bb5)](https://github.com/jazzband/pip-tools)
