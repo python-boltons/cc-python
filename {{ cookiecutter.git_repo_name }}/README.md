@@ -53,6 +53,7 @@ tools / frameworks used to render documentation:
   interested in contributing to this project.
 * [Documentation][1]: This project's documentation is hosted on
   [readthedocs.io][6].
+* [github:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]: This project’s source code is hosted on GitHub.
 
 
 ## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation 📄
@@ -156,9 +157,10 @@ This project is enabled with `cruft` to be able to update the template with any 
 
 
 [1]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest
-[2]: https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
+[2]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
 [3]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest/modules.html
 [4]: https://github.com/bbugyi200/cc-python
 [5]: https://github.com/cookiecutter/cookiecutter
 [6]: https://docs.readthedocs.io/en/stable/
-[7]: https://github.com/bbugyi200/{{ cookiecutter.git_repo_name }}/blob/master/CONTRIBUTING.md
+[7]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CONTRIBUTING.md
+[8]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}
