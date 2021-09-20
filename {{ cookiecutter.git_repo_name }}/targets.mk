@@ -76,17 +76,13 @@ pylint: sync-dev-requirements  ## Run pylint checks.
 test: sync-dev-requirements  ## Run this project's test suite.
 	$(call runtests,ALL)
 
-# Test a single python version.
+### Test a single python version.
 #
 # Examples:
 #   // run tests on python3.8 _only_
 #   make test-py38
 test-%: sync-dev-requirements
 	$(call runtests,$*)
-
-$(VENV_ACTIVATE):
-	python3 -m venv $(VENV)
-	$(PIP) install -U pip pip-tools
 
 .PHONY: build
 build: sync-dev-requirements
@@ -121,6 +117,11 @@ update-requirements: $(VENV_ACTIVATE)
 	$(PIP_COMPILE) --upgrade --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	$(call sync_dev_requirements)
+
+### Bootstraps virtual environment for first use.
+$(VENV_ACTIVATE):
+	python3 -m venv $(VENV)
+	$(PIP) install -U pip pip-tools
 
 .PHONY: check-requirements
 check-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
