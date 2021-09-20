@@ -49,15 +49,15 @@ tools / frameworks used to render documentation:
 * [API Reference][3]: A developer's reference of the API exposed by this
   project.
 * [cc-python][4]: The [cookiecutter][5] that was used to generate this project.
-  Furthermore, changes made to this cookiecutter are periodically synced with
-  this project.
+  Changes made to this cookiecutter are periodically synced with this project.
 * [CHANGELOG.md][2]: We use this file to document all notable changes made to
   this project.
 * [CONTRIBUTING.md][7]: This document contains guidelines for developers
   interested in contributing to this project.
 * [Documentation][1]: This project's documentation is hosted on
   [readthedocs.io][6].
-* [gh:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]: This project’s source code is hosted on GitHub.
+* [gh:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]:
+  This project’s source code is hosted on GitHub.
 
 
 ## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation 📄
