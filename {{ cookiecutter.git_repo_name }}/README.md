@@ -2,6 +2,10 @@
 
 **{{ cookiecutter.package_description }}**
 
+## Badges 📛
+
+dynamic status badges:
+
 [![CI Workflow](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }})
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.git_repo_name }}/badge/?version=latest)](https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest/?badge=latest)
