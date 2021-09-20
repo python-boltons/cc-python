@@ -112,8 +112,8 @@ sync-dev-requirements: requirements-dev.txt
 
 .PHONY: update-requirements
 update-requirements: export CUSTOM_COMPILE_COMMAND="make update-requirements"
-update-requirements: ## Update all requirements to latest versions.
 update-requirements: $(VENV_ACTIVATE)
+update-requirements: ## Update all requirements to latest versions.
 	$(PIP_COMPILE) --upgrade --output-file=requirements-dev.txt requirements.in requirements-dev.in
 	$(PIP_COMPILE) --upgrade --output-file=requirements.txt requirements.in
 	$(call sync_dev_requirements)
