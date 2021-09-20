@@ -23,7 +23,7 @@ tools / frameworks used by test suite (i.e. used by `make test`):
 [![Framework: pytest](https://img.shields.io/badge/framework-pytest-a76465)](https://github.com/pytest-dev/pytest)
 [![Framework: doctest](https://img.shields.io/badge/framework-doctest-64c44e)](https://docs.python.org/3/library/doctest.html)
 [![Runner: tox](https://img.shields.io/badge/runner-tox-f5f5f5)](https://github.com/tox-dev/tox)
-[![Types: typeguard](https://img.shields.io/badge/types-typeguard-cf51ac)](https://github.com/agronholm/typeguard)
+[![Types: typeguard](https://img.shields.io/badge/types-typeguard-3a7163)](https://github.com/agronholm/typeguard)
 [![Mocks: pytest-mock](https://img.shields.io/static/v1?label=mocks&message=pytest-mock&color=9c70d7)](https://github.com/pytest-dev/pytest-mock)
 [![Snapshots: syrupy](https://img.shields.io/static/v1?label=snapshots&message=syrupy&color=436fa8)](https://github.com/tophat/syrupy)
 
