@@ -18,7 +18,7 @@ version badges:
 [![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cookiecutter&message=cc-python:2021.09.20&color=b4b400)](https://github.com/bbugyi200/cc-python)
 [![Docker: bbugyi/python](https://img.shields.io/static/v1?label=docker&message=bbugyi%2Fpython:2021.09.16&color=8ec4ad)](https://hub.docker.com/layers/167607937/bbugyi/python/2021.09.16/images/sha256-f058f973afafe78d02a396737cf9ede564e2309f5b9fa94bbaaf024f60a96645?context=repo)
 
-tools / frameworks used by test suite:
+tools / frameworks used by test suite (i.e. used by `make test`):
 
 [![Framework: pytest](https://img.shields.io/badge/framework-pytest-a76465)](https://github.com/pytest-dev/pytest)
 [![Framework: doctest](https://img.shields.io/badge/framework-doctest-64c44e)](https://docs.python.org/3/library/doctest.html)
@@ -27,7 +27,7 @@ tools / frameworks used by test suite:
 [![Mocks: pytest-mock](https://img.shields.io/static/v1?label=mocks&message=pytest-mock&color=9c70d7)](https://github.com/pytest-dev/pytest-mock)
 [![Snapshots: syrupy](https://img.shields.io/static/v1?label=snapshots&message=syrupy&color=436fa8)](https://github.com/tophat/syrupy)
 
-linters used by CI to maintain code quality:
+linters used to maintain code quality (i.e. used by `make lint`):
 
 [![Linter: pylint](https://img.shields.io/badge/linter-pylint-ffff00)](https://github.com/PyCQA/pylint)
 [![Linter: flake8](https://img.shields.io/badge/linter-flake8-008080)](https://github.com/PyCQA/flake8)
@@ -36,7 +36,7 @@ linters used by CI to maintain code quality:
 [![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/imports-isort-ef8336)](https://github.com/PyCQA/isort)
 
-tools / frameworks used to render documentation:
+tools / frameworks used to render documentation (i.e used by `make build-docs`):
 
 [![Rendered By: sphinx](https://img.shields.io/badge/rendered%20by-sphinx-38c91f)](https://github.com/sphinx-doc/sphinx)
 [![Hosted On: readthedocs](https://img.shields.io/badge/hosted%20on-readthedocs-e08839)](https://docs.readthedocs.io/en/stable/)
