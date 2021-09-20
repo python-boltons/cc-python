@@ -29,8 +29,8 @@ def _requires(reqtxt_basename: str) -> Iterator[str]:
 
 
 setup(
-    author="Bryan M Bugyi",
-    author_email="bryanbugyi34@gmail.com",
+    author="{{ cookiecutter.author }}",
+    author_email="{{ cookiecutter.email }}",
     python_requires=">=3.7",
     install_requires=install_requires(),
     classifiers=[

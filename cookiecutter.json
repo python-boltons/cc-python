@@ -1,4 +1,6 @@
 {
+    "author": "Bryan M Bugyi",
+    "email": "bryanbugyi34@gmail.com",
     "github_username": "bbugyi200",
     "git_org_name": "{{ cookiecutter.github_username }}",
     "git_repo_name": "",

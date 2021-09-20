@@ -19,7 +19,7 @@ function run() {
             "${changed_files}"
 
         unsafe_cmd git config --global user.name "GitHub CI Workflow"
-        unsafe_cmd git config --global user.email "bryanbugyi34@gmail.com"
+        unsafe_cmd git config --global user.email "{{ cookiecutter.email }}"
 
         unsafe_cmd git add -v docs/source/*.rst
         unsafe_cmd git commit -m "Refresh documentation by running \`make build-docs\`"
