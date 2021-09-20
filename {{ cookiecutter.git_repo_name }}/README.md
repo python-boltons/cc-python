@@ -53,7 +53,7 @@ tools / frameworks used to render documentation:
   interested in contributing to this project.
 * [Documentation][1]: This project's documentation is hosted on
   [readthedocs.io][6].
-* [github:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]: This project’s source code is hosted on GitHub.
+* [gh:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]: This project’s source code is hosted on GitHub.
 
 
 ## Generic [cc-python](https://github.com/bbugyi200/cc-python) Documentation 📄
