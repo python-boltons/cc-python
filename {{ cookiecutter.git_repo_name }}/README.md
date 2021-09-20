@@ -9,10 +9,14 @@ dynamic status badges:
 [![CI Workflow](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }})
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.git_repo_name }}/badge/?version=latest)](https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest/?badge=latest)
+[![Package Health](https://snyk.io/advisor/python/{{ cookiecutter.package_name }}/badge.svg)](https://snyk.io/advisor/python/{{ cookiecutter.package_name }})
+
+version badges:
+
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
-[![cc-python Version](https://img.shields.io/static/v1?label=cc-python&message=2021.09.19-1&color=b4b400)](https://github.com/bbugyi200/cc-python)
-[![Package Health](https://snyk.io/advisor/python/{{ cookiecutter.package_name }}/badge.svg)](https://snyk.io/advisor/python/{{ cookiecutter.package_name }})
+[![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cookiecutter&message=cc-python:2021.09.19-1&color=b4b400)](https://github.com/bbugyi200/cc-python)
+[![Docker: bbugyi/python](https://img.shields.io/static/v1?label=docker&message=bbugyi%2Fpython:2021.09.16&color=8ec4ad)](https://hub.docker.com/layers/167607937/bbugyi/python/2021.09.16/images/sha256-f058f973afafe78d02a396737cf9ede564e2309f5b9fa94bbaaf024f60a96645?context=repo)
 
 tools / frameworks used by test suite:
 
