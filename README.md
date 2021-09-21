@@ -5,6 +5,7 @@ projects.
 
 [cookiecutter]: https://github.com/cookiecutter/cookiecutter
 
+
 ## Initializing a New Project using this cookiecutter
 
 This section provides a demonstration of initializing a new cc-python project,
@@ -15,9 +16,9 @@ We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps setup our new repository and allow it to talk to
 the outside world. Namely, we need to:
 
-* Add a description and tags (at least the `python` tag) to the github
-  repository by clicking the little gear next to the "About" header (uncheck
-  all boxes in the "Include in the home page" section).
+* Add a description and tags (at least the `python` and `cc-python` tags) to
+  the github repository by clicking the little gear next to the "About" header
+  (uncheck all boxes in the "Include in the home page" section).
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
   publish to PyPI. We can accomplish this by going to the following link
   (remember to replace `org` and `foobar` with the actual organization and
