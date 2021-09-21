@@ -45,16 +45,25 @@ We then run the following command to generate a new project using cruft:
 cruft create https://github.com/bbugyi200/cc-python
 ```
 
-Answer all of the variable prompts that cruft produces (e.g. `foobar` for the
-`git_repo_name` prompt) and then run the following commands to push this new
-project to the repo you created earlier via GitHub's web interface:
+Answer all of the variable prompts that cruft produces (e.g. `org` for the
+`git_org_name` prompt and `foobar` for the `git_repo_name` prompt) and then run
+the following commands to push this new project to the repo you created earlier
+via GitHub's web interface:
 
 ```bash
 cd foobar
+
+# first commit
+git add -v --all
+git commit -m "First commit"
+
+# initialize project
 make use-docker
 make all
 git add -v --all
-git commit -m "First commit."
+git commit -m 'Initialize project by running `make all`'
+
+# push project to github repo
 git push -u origin master
 ```
 
