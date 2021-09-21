@@ -1,1 +1,1 @@
-{{ cookiecutter.git_repo_name }}/.gitignore
+{{cookiecutter.git_repo_name}}/.gitignore
