@@ -17,7 +17,7 @@ We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps setup our new repository and allow it to talk to
 the outside world. Namely, we need to:
 
-* Add a description and tags (at least the `python` and `cc-python` tags) to
+* Add a description and tags (at least the [python][9] and [cc-python][8] tags) to
   the github repository by clicking the little gear next to the "About" header
   (uncheck all boxes in the "Include in the home page" section).
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
@@ -114,3 +114,4 @@ find . -type f -name '*.rej' -delete
 [6]: https://github.com/cruft/cruft
 [7]: https://github.com/pypa/pipx
 [8]: https://github.com/topics/cc-python
+[9]: https://github.com/topics/python
