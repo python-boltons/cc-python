@@ -1,7 +1,8 @@
 # cc-python [![CI Workflow](https://github.com/bbugyi200/cc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/bbugyi200/cc-python/actions/workflows/ci.yml) [![Version](https://img.shields.io/static/v1?label=version&message=2021.09.20-1&color=4d4dff)](https://github.com/bbugyi200/cc-python/blob/master/CHANGELOG.md#20210920-1)
 
 This repository contains the [cookiecutter] that I use for all of my Python
-projects.
+projects. Refer to [this link][8] for a list of all projects that were
+generated using this cookiecutter.
 
 [cookiecutter]: https://github.com/cookiecutter/cookiecutter
 
@@ -112,3 +113,4 @@ find . -type f -name '*.rej' -delete
 [5]: https://github.com/bbugyi200?tab=repositories
 [6]: https://github.com/cruft/cruft
 [7]: https://github.com/pypa/pipx
+[8]: https://github.com/topics/cc-python
