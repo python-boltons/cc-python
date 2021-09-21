@@ -18,10 +18,9 @@ GitHub. These next few steps setup our new repository and allow it to talk to
 the outside world. Namely, we need to:
 
 * Add a description and tag the repository with relevant topics (at the very
-  least, tag the repo with the [python][9] and [cc-python][8] topics) to the
-  github repository by clicking the little gear next to the "About" header (you
-  also might want to uncheck all boxes in the "Include in the home page"
-  section).
+  least, tag the repo with the [python][9] and [cc-python][8] topics) by
+  clicking the little gear next to the "About" header (you also might want to
+  uncheck all boxes in the "Include in the home page" section).
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
   publish to PyPI. We can accomplish this by going to the following link
   (remember to replace `org` and `foobar` with the actual organization and
