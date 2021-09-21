@@ -12,9 +12,23 @@ say `foobar`, under some github organization, say `org`, using this
 cookiecutter repo.
 
 We must first create a new repository under the [org][5] organization using
-GitHub. We then use [cruft][6] to initialize a new project using this
-cookiecutter. Before we can do that, we need to install cruft (we recommend
-using [pipx][7] for this):
+GitHub. These next few steps setup our new repository and allow it to talk to
+the outside world. Namely, we need to:
+
+* Add a description and tags to the github repository by clicking the little
+  gear next to the "About" header (uncheck all boxes in the "Include in the
+  home page" section).
+* Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
+  publish to PyPI. We can accomplish this by going to the following link
+  (remember to replace `org` and `foobar` with the actual organization and
+  repository names you have chosen). See [this guide][1] for more information
+  on this step: https://github.com/org/foobar/settings/secrets/actions
+* [Import](https://readthedocs.org/dashboard/) the `foobar` project from
+  [readthedocs][2].
+
+We then use [cruft][6] to initialize a new project using this cookiecutter.
+Before we can do that, we need to install cruft (we recommend using [pipx][7]
+for this):
 
 ```bash
 # install and setup pipx
@@ -43,17 +57,6 @@ git add -v --all
 git commit -m "First commit."
 git push -u origin master
 ```
-
-Finally, these last few steps are required to allow our new repository to talk
-to the outside world. Namely, we need to:
-
-* Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
-  publish to PyPI. We can accomplish this by going to the following link
-  (remember to replace `org` and `foobar` with the actual organization and
-  repository names you have chosen). See [this guide][1] for more information
-  on this step: https://github.com/org/foobar/settings/secrets/actions
-* [Import](https://readthedocs.org/dashboard/) the `foobar` project from
-  [readthedocs][2].
 
 
 ## How to Propagate Changes to All Cookiecutter Projects
