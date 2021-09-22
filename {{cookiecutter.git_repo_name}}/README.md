@@ -57,9 +57,9 @@ miscellaneous tools used to maintain this project:
 ### Using `pipx` to Install (preferred)
 
 This package _could_ be installed using pip like any other Python package (in
-fact, see the section below this one for instructions). Given that we only need
-this package's entry points, however, we recommend that [pipx][11] be used
-instead:
+fact, see the section below this one for instructions on how to do just that).
+Given that we only need this package's entry points, however, we recommend that
+[pipx][11] be used instead:
 
 ```shell
 # install and setup pipx
