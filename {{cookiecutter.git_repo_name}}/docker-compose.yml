@@ -7,7 +7,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/{{ cookiecutter.package_path }}:delegated
-      - build:/{{ cookiecutter.package_path }}/build
       - venv:/{{ cookiecutter.package_path }}/.venv
       - docker-python-cache:/root/.cache/
     working_dir: /{{ cookiecutter.package_path }}
@@ -17,5 +16,4 @@ services:
 volumes:
   docker-python-cache:
     external: true
-  build:
   venv:
