@@ -166,5 +166,6 @@ clean: docs-clean
 	$(RM) -r .coverage
 	$(RM) -r .mypy_cache
 	$(RM) -r $(package).egg-info
+	$(RM) -r $(VENV)
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	find . -type f -name '*.pyc' -exec rm -rf {} +
