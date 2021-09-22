@@ -19,7 +19,7 @@ If you are proposing a feature:
   welcome :).
 
 
-## Development Guide
+## Developer's Guide
 
 ### 🔢 Basic Usage
 
