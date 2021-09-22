@@ -64,7 +64,6 @@ jobs:
       - name: Check that this project is up-to-date with cookiecutter.
         run: |
           make check-cc
-
   publish:
     runs-on: [ubuntu-latest]
     needs:
