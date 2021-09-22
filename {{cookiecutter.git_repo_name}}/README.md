@@ -96,8 +96,6 @@ you through the process.
   interested in contributing to this project.
 * [Documentation][1]: This project's documentation is hosted on
   [readthedocs.io][6].
-* [gh:{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}][8]:
-  This project’s source code is hosted on GitHub.
 
 
 [1]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest
