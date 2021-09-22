@@ -45,7 +45,7 @@ tools / frameworks used to render documentation (i.e used by `make build-docs`):
 
 miscellaneous tools used to maintain this project:
 
-[![Cookiecutter Updates: cruft](https://img.shields.io/badge/cc%20updates-cruft-6a4aef)](https://github.com/cruft/cruft)
+[![Cookiecutter Updates: cruft](https://img.shields.io/badge/cc%20updates-cruft-6a4aef)][12]
 [![Requirements: pip-tools](https://img.shields.io/static/v1?label=requirements&message=pip-tools&color=a77bb5)](https://github.com/jazzband/pip-tools)
 [![Releases: bump2version](https://img.shields.io/badge/releases-bump2version-163b1a)](https://github.com/c4urself/bump2version)
 [![Versioning: setuptools_scm](https://img.shields.io/static/v1?label=versioning&message=setuptools-scm&color=f61a61)](https://github.com/pypa/setuptools_scm)
@@ -89,13 +89,13 @@ you through the process.
 * [API Reference][3]: A developer's reference of the API exposed by this
   project.
 * [cc-python][4]: The [cookiecutter][5] that was used to generate this project.
-  Changes made to this cookiecutter are periodically synced with this project.
+  Changes made to this cookiecutter are periodically synced with this project
+  using [cruft][12].
 * [CHANGELOG.md][2]: We use this file to document all notable changes made to
   this project.
 * [CONTRIBUTING.md][7]: This document contains guidelines for developers
   interested in contributing to this project.
-* [Documentation][1]: This project's documentation is hosted on
-  [readthedocs.io][6].
+* [Documentation][1]: This project's full documentation can be found here.
 
 
 [1]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest
@@ -109,3 +109,4 @@ you through the process.
 [9]: https://pip.pypa.io
 [10]: http://docs.python-guide.org/en/latest/starting/installation/
 [11]: https://github.com/pypa/pipx
+[12]: https://github.com/cruft/cruft
