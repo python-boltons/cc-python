@@ -176,7 +176,7 @@ improvements made in the cc-python cookie cutter which generated it.
 A reminder for the maintainers on how to deploy. Make sure all your changes are
 committed and that you have [bumpversion][2] installed. Then run:
 
-```console
+```bash
 bumpversion patch  # possible values: major / minor / patch
 git push
 git push --tags
