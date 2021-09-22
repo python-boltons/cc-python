@@ -7,13 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/{{ cookiecutter.package_path }}:delegated
-      - venv:/{{ cookiecutter.package_path }}/.venv
-      - docker-python-cache:/root/.cache/
     working_dir: /{{ cookiecutter.package_path }}
     environment:
       - BETTER_EXCEPTIONS
       - CC_REPO_URL
-volumes:
-  docker-python-cache:
-    external: true
-  venv:
