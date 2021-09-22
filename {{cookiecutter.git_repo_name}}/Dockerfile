@@ -4,7 +4,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ### install dpkgs
 COPY dpkg-dependencies.txt /tmp/
-RUN apt-get install -y --allow-unauthenticated $(cat /tmp/dpkg-dependencies.txt | grep "^[A-Za-z]" | perl -nE 'print s/^([^#]+)[ ]+#.*/\1/gr') && \
+# hadolint ignore=SC2046
+RUN apt-get install -y --no-install-recommends --allow-unauthenticated $(grep "^[A-Za-z]" /tmp/dpkg-dependencies.txt | perl -nE 'print s/^([^#]+)[ ]+#.*/\1/gr') && \
     apt-get clean
 
 USER bryan
