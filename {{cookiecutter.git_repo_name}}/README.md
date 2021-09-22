@@ -47,7 +47,7 @@ miscellaneous tools used to maintain this project:
 
 [![Cookiecutter Updates: cruft](https://img.shields.io/badge/cc%20updates-cruft-6a4aef)](https://github.com/cruft/cruft)
 [![Requirements: pip-tools](https://img.shields.io/static/v1?label=requirements&message=pip-tools&color=a77bb5)](https://github.com/jazzband/pip-tools)
-[![Releases: bump2version](https://img.shields.io/badge/releases-bump2version-828e52)](https://github.com/c4urself/bump2version)
+[![Releases: bump2version](https://img.shields.io/badge/releases-bump2version-163b1a)](https://github.com/c4urself/bump2version)
 [![Versioning: setuptools_scm](https://img.shields.io/static/v1?label=versioning&message=setuptools-scm&color=f61a61)](https://github.com/pypa/setuptools_scm)
 
 
