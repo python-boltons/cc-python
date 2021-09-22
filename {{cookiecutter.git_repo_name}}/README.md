@@ -51,6 +51,39 @@ miscellaneous tools used to maintain this project:
 [![Versioning: setuptools_scm](https://img.shields.io/static/v1?label=versioning&message=setuptools-scm&color=f61a61)](https://github.com/pypa/setuptools_scm)
 
 
+## Installation
+{%- if cookiecutter.package_type == "application" %}
+
+### Using `pipx` to Install (preferred)
+
+This package _could_ be installed using pip like any other Python package (in
+fact, see the section below this one for instructions). Given that we only need
+this package's entry points, however, we recommend that [pipx][11] be used
+instead:
+
+```shell
+# install and setup pipx
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+# install {{ cookiecutter.package_name }}
+pipx install {{ cookiecutter.package_name }}
+```
+
+### Using `pip` to Install
+{%- endif %}
+
+To install {{ cookiecutter.package_name }} using [pip][9], run the following
+commands in your terminal:
+
+``` shell
+python3 -m pip install --user {{ cookiecutter.package_name }}  # install {{ cookiecutter.package_name }}
+```
+
+If you don't have pip installed, this [Python installation guide][10] can guide
+you through the process.
+
+
 ## Useful Links 🔗
 
 * [API Reference][3]: A developer's reference of the API exposed by this
@@ -75,3 +108,6 @@ miscellaneous tools used to maintain this project:
 [6]: https://docs.readthedocs.io/en/stable/
 [7]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CONTRIBUTING.md
 [8]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}
+[9]: https://pip.pypa.io
+[10]: http://docs.python-guide.org/en/latest/starting/installation/
+[11]: https://github.com/pypa/pipx
