@@ -44,8 +44,8 @@ lint: black isort pydocstyle flake8 mypy pylint ## Run all linting checks.
 
 .PHONY: black
 black: sync-dev-requirements  ## Run black checks.
-	$(PYTHON) -m black --check src
-	$(PYTHON) -m black --check tests
+	$(PYTHON) -m black --diff --check -q --color src
+	$(PYTHON) -m black --diff --check -q --color tests
 
 .PHONY: isort
 isort: sync-dev-requirements  ## Run isort checks. 
