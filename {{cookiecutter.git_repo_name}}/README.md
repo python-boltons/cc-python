@@ -95,7 +95,7 @@ you through the process.
   this project.
 * [CONTRIBUTING.md][7]: This document contains guidelines for developers
   interested in contributing to this project.
-* [Documentation][1]: This project's full documentation can be found here.
+* [Documentation][1]: This project's full documentation.
 
 
 [1]: https://{{ cookiecutter.git_repo_name }}.readthedocs.io/en/latest
