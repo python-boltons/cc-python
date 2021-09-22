@@ -182,9 +182,10 @@ git push
 git push --tags
 ```
 
-A new version of `{{ cookiecutter.package_name }}` will then deploy to PyPI if
-tests pass.
+A new version of `{{ cookiecutter.package_name }}` will then deploy to
+[PyPI][3] if tests pass.
 
 
 [1]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
 [2]: https://github.com/c4urself/bump2version
+[3]: https://pypi.org/project/{{ cookiecutter.package_name }}
