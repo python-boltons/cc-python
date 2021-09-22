@@ -173,9 +173,11 @@ improvements made in the cc-python cookie cutter which generated it.
 
 ## New Releases
 
-A reminder for the maintainers on how to release a new version of this package
-to [PyPI][3]. Make sure all your changes are committed and that you have
-[bumpversion][2] installed. Then run:
+This section serves as a reminder to the maintainers of this project on how to
+release a new version of this package to [PyPI][3].
+
+Make sure all your changes are committed and that you have [bumpversion][2]
+installed. Then run:
 
 ```bash
 bumpversion patch  # possible values: major / minor / patch
