@@ -51,7 +51,7 @@ miscellaneous tools used to maintain this project:
 [![Versioning: setuptools_scm](https://img.shields.io/static/v1?label=versioning&message=setuptools-scm&color=f61a61)](https://github.com/pypa/setuptools_scm)
 
 
-## Installation
+## Installation 🗹
 {%- if cookiecutter.package_type == "application" %}
 
 ### Using `pipx` to Install (preferred)
