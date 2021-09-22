@@ -3,7 +3,7 @@
 
 ## How to submit feedback?
 
-The best way to send feedback is to [file an issue][1].
+The best way to submit feedback is to [file an issue][1].
 
 If you are reporting a bug, please include:
 
@@ -171,10 +171,11 @@ improvements made in the cc-python cookie cutter which generated it.
 </details>
 
 
-## Deploying
+## New Releases
 
-A reminder for the maintainers on how to deploy. Make sure all your changes are
-committed and that you have [bumpversion][2] installed. Then run:
+A reminder for the maintainers on how to release a new version of this package
+to [PyPI][3]. Make sure all your changes are committed and that you have
+[bumpversion][2] installed. Then run:
 
 ```bash
 bumpversion patch  # possible values: major / minor / patch
@@ -183,7 +184,7 @@ git push --tags
 ```
 
 A new version of `{{ cookiecutter.package_name }}` will then deploy to
-[PyPI][3] if tests pass.
+PyPI if tests pass.
 
 
 [1]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
