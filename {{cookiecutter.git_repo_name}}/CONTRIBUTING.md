@@ -186,7 +186,7 @@ git push --tags
 ```
 
 A new version of `{{ cookiecutter.package_name }}` will then deploy to
-PyPI if tests pass.
+PyPI if all CI checks pass.
 
 
 [1]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
