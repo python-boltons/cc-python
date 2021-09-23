@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.23...HEAD)
+## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.23-1...HEAD)
+
+No notable changes have been made.
+
+## [2021.09.23-1](https://github.com/bbugyi200/cc-python/compare/2021.09.23...2021.09.23-1)
 
 ### Fixed
 
