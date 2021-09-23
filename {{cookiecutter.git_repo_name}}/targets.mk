@@ -140,12 +140,7 @@ $(VENV_ACTIVATE):
 
 .PHONY: check-cc
 check-cc: sync-dev-requirements
-ifdef CC_REPO_URL
-	test -f .cruft.json && sed -i.bak 's#"template":.*#"template": "$(CC_REPO_URL)",#' .cruft.json && $(RM) .cruft.json.bak
-endif
-	$(CRUFT) check --not-strict && \
-	echo "Project is up-to-date." || \
-	{ echo "Your project is out of sync with the cookiecutter. Run 'make update-cc' to update your project." ; exit 1; }
+	./bin/check_cc
 
 .PHONY: update-cc
 update-cc: sync-dev-requirements
