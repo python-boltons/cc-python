@@ -7,10 +7,10 @@
 SCRIPTNAME="$(basename "$0")"
 
 function run() {
-    if [[ -n "${CC_REPO_URL}" ]]; then
-        if [[ -f .cruft.json ]]; then
-            perl -i -nE "print s{\"template\":.*}{\"${CC_REPO_URL}\",}gr" .cruft.json
-        fi
+    if [[ -n "${CC_REPO_URL}" ]] && [[ -f .cruft.json ]]; then
+        perl -i -nE \
+            "print s{\"template\":.*}{\"template\": \"${CC_REPO_URL}\",}gr" \
+            .cruft.json
     fi
     
     if ! cruft check --not-strict -c master; then
