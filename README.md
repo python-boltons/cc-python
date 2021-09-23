@@ -66,7 +66,8 @@ git commit -m 'Initialize project by running `make all`'
 git push -u origin master
 ```
 
-Now that we have pushed some code, we can cleanup our new repository a bit:
+Now that we have pushed some code to it, we can cleanup our new repository a
+bit:
 
 * Add a description and tag the repository with relevant topics (at the very
   least, tag the repo with the [python][9] and [cc-python][8] topics) by
