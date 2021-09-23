@@ -56,7 +56,8 @@ function run() {
         git config --global user.email "bryanbugyi34@gmail.com"
 
         git commit -am "Bump version: ${old_version} → ${new_version}"
-        git push
+        git push origin master
+        git push origin latest
         
         git tag "${new_version}"
         git push --tags
