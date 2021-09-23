@@ -9,16 +9,15 @@ SCRIPTNAME="$(basename "$0")"
 function run() {
     if [[ -n "${CC_REPO_URL}" ]]; then
         if [[ -f .cruft.json ]]; then
-            sed -i.bak 's#"template":.*#"template": "$(CC_REPO_URL)",#' .cruft.json
-            rm -f .cruft.json.bak
+            perl -i -nE "print s{\"template\":.*}{\"${CC_REPO_URL}\",}gr" .cruft.json
         fi
     fi
     
-    if cruft check --not-strict; then
-        echo "Project is up-to-date."
-    else
-        echo "Your project is out of sync with the cookiecutter. Run 'make update-cc' to update your project."
-        return 1
+    if ! cruft check --not-strict -c master; then
+        if ! cruft check --not-strict -c stable; then
+            echo "Your project is out of sync with the cookiecutter. Run 'make update-cc' to update your project."
+            return 1
+        fi
     fi
 }
 

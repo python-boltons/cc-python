@@ -140,7 +140,7 @@ $(VENV_ACTIVATE):
 
 .PHONY: check-cc
 check-cc: sync-dev-requirements
-	./bin/check_cc
+	$(SOURCE_VENV) ./bin/check_cc
 
 .PHONY: update-cc
 update-cc: sync-dev-requirements
