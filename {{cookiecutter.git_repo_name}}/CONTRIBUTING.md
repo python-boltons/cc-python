@@ -158,7 +158,7 @@ Update my project to match the cookiecutter which generated it
 </summary>
 
 This project is enabled with `cruft` to be able to update the template with any
-improvements made in the cc-python cookie cutter which generated it.
+improvements made in the cc-python cookiecutter which generated it.
 
 * `make check-cc` will report if this project is up to date or out of sync with
   the cookiecutter.
