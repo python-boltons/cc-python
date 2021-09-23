@@ -158,7 +158,7 @@ Update my project to match the cookiecutter which generated it
 </summary>
 
 This project is enabled with `cruft` to be able to update the template with any
-improvements made in the cc-python cookiecutter which generated it.
+improvements made in the [cc-python][4] cookiecutter which generated it.
 
 * `make check-cc` will report if this project is up to date or out of sync with
   the cookiecutter.
@@ -192,3 +192,4 @@ PyPI if all CI checks pass.
 [1]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
 [2]: https://github.com/c4urself/bump2version
 [3]: https://pypi.org/project/{{ cookiecutter.package_name }}
+[4]: https://github.com/bbugyi200/cc-python
