@@ -149,7 +149,7 @@ update-cc: ## Update the project to the latest version of the cookiecutter
 
 .PHONY: dev-shell
 dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
-	(source $(VENV)/bin/activate && bash)
+	($(SOURCE_VENV) && bash)
 
 .PHONY: clean
 clean: docs-clean
