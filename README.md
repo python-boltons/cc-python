@@ -14,13 +14,9 @@ say `foobar`, under some github organization, say `org`, using this
 cookiecutter repo.
 
 We must first create a new repository under the [org][5] organization using
-GitHub. These next few steps setup our new repository and allow it to talk to
+GitHub. These next few steps are needed to allow our new repository to talk to
 the outside world. Namely, we need to:
 
-* Add a description and tag the repository with relevant topics (at the very
-  least, tag the repo with the [python][9] and [cc-python][8] topics) by
-  clicking the little gear next to the "About" header (you may also want to
-  uncheck all boxes in the "Include in the home page" section).
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
   publish to PyPI. We can accomplish this by going to the following link
   (remember to replace `org` and `foobar` with the actual organization and
@@ -69,6 +65,13 @@ git commit -m 'Initialize project by running `make all`'
 # push project to github repo
 git push -u origin master
 ```
+
+Now that we have pushed some code, we can cleanup our new repository a bit:
+
+* Add a description and tag the repository with relevant topics (at the very
+  least, tag the repo with the [python][9] and [cc-python][8] topics) by
+  clicking the little gear next to the "About" header (you may also want to
+  uncheck all boxes in the "Include in the home page" section).
 
 
 ## How to Propagate Changes to All Cookiecutter Projects
