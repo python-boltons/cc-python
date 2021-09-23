@@ -4,11 +4,13 @@ https://docs.pytest.org/en/6.2.x/fixture.html#conftest-py-sharing-fixtures-acros
 """
 
 from _pytest.config import Config
+from _pytest.nodes import Item
+from typeguard import typechecked
 from typeguard.importhook import install_import_hook
 
 
 def pytest_configure(config: Config) -> None:
-    """Setup typeguard importhooks.
+    """Initial pytest configuration hook.
 
     Note:
         We cannot use --typeguard-packages=tests since we currently get the
@@ -21,7 +23,22 @@ def pytest_configure(config: Config) -> None:
         See the following URL for more information:
 
         https://docs.pytest.org/en/stable/writing_plugins.html#assertion-rewriting
+
+    See the following URL for more information on this pytest hook:
+        https://docs.pytest.org/en/6.2.x/reference.html#pytest.hookspec.pytest_configure
     """
     del config
 
     install_import_hook("{{ cookiecutter.package_name }}")
+
+
+def pytest_runtest_call(item: Item) -> None:
+    """Called once for each test function.
+
+    See the following URL for more information on this pytest hook:
+        https://docs.pytest.org/en/6.2.x/reference.html#pytest.hookspec.pytest_runtest_call
+    """
+    # Decorate every test function [e.g. test_foo()] with typeguard's
+    # typechecked() decorator.
+    test_func = item.obj
+    item.obj = typechecked(test_func)
