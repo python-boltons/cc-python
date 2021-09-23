@@ -13,7 +13,6 @@ function run() {
             .cruft.json
     fi
     
-    # temp
     if ! cruft check --not-strict -c master; then
         printf "%s: This project is not up-to-date with the 'master' branch.\n" \
             "${SCRIPTNAME}"
