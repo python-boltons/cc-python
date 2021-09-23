@@ -40,5 +40,5 @@ def pytest_runtest_call(item: Item) -> None:
     """
     # Decorate every test function [e.g. test_foo()] with typeguard's
     # typechecked() decorator.
-    test_func = item.obj
-    item.obj = typechecked(test_func)
+    test_func = getattr(item, "obj")
+    setattr(item, "obj", typechecked(test_func))
