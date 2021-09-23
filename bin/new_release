@@ -57,7 +57,7 @@ function run() {
 
         git commit -am "Bump version: ${old_version} → ${new_version}"
         git push origin master
-        git push origin latest
+        git push origin master:latest
         
         git tag "${new_version}"
         git push --tags
