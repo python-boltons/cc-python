@@ -152,8 +152,8 @@ dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environ
 	(source $(VENV)/bin/activate && bash)
 
 .PHONY: clean
-clean: ## Remove build artifacts.
 clean: docs-clean
+clean: ## Remove build artifacts.
 	$(RM) -r build/*
 	$(RM) MANIFEST
 	$(RM) -r dist/*
