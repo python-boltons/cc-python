@@ -176,8 +176,9 @@ improvements made in the [cc-python][4] cookiecutter which generated it.
 This section serves as a reminder to the maintainers of this project on how to
 release a new version of this package to [PyPI][3].
 
-Make sure all your changes are committed and that you have [bumpversion][2]
-installed. Then run:
+Make sure all your changes are committed, that you have added a new section to
+the [CHANGELOG.md][5] file, and that you have [bumpversion][2] installed. Then
+run:
 
 ```bash
 bumpversion patch  # possible values: major / minor / patch
@@ -193,3 +194,4 @@ PyPI if all CI checks pass.
 [2]: https://github.com/c4urself/bump2version
 [3]: https://pypi.org/project/{{ cookiecutter.package_name }}
 [4]: https://github.com/bbugyi200/cc-python
+[5]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
