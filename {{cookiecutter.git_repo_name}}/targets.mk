@@ -139,7 +139,7 @@ $(VENV_ACTIVATE):
 	$(PIP) install -U pip pip-tools
 
 .PHONY: check-cc
-check-cc: sync-dev-requirements
+check-cc: sync-dev-requirements  ## Check if this project needs to be synced with the cookiecutter that generated it.
 	$(SOURCE_VENV) ./bin/check_cc
 
 .PHONY: update-cc
