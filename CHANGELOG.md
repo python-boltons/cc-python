@@ -10,7 +10,9 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.23...HEAD)
 
-No notable changes have been made.
+### Fixed
+
+* Fix 'git push' to 'latest' branch
 
 ## [2021.09.23](https://github.com/bbugyi200/cc-python/compare/2021.09.20-1...2021.09.23)
 
