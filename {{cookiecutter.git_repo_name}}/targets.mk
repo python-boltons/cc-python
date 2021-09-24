@@ -25,7 +25,7 @@ endef
 define runtests
 	$(TOX) -e $(1) -- \
 		-vv \
-		--cov=. \
+		--cov=src/{{ cookiecutter.package_path }} \
 		--cov-config=setup.cfg \
 		--cov-fail-under=80 \
 		--cov-report=xml:coverage.xml \
