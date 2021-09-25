@@ -16,7 +16,7 @@ def main() -> None:
     normalize_namespace_path(context["package_name"], context["package_path"])
 
 
-def create_git_repo(package_name: str) -> None:
+def create_git_repo(git_repo_name: str) -> None:
     if Path(".git").exists():
         print("[WARNING | create_git_repo]: The .git directory already exists.")
         return
@@ -29,7 +29,7 @@ def create_git_repo(package_name: str) -> None:
         stderr=PIPE,
     )
     subprocess.run(
-        ["git", "remote", "add", "origin", GITHUB_URL(package_name)],
+        ["git", "remote", "add", "origin", GITHUB_URL(git_repo_name)],
         check=True,
         cwd=PROJECT_DIRECTORY,
     )

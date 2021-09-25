@@ -3,5 +3,6 @@ default_context:
   git_org_name: bbugyi200
   git_repo_name: app
   package_name: app
+  pypi_package_name: app
   package_description: "A test application."
   package_type: application

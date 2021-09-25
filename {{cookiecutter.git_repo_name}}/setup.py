@@ -55,7 +55,7 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     include_package_data=True,
-    name="{{ cookiecutter.package_name }}",
+    name="{{ cookiecutter.pypi_package_name }}",
     package_dir={"": "src"},
     packages=find_namespace_packages(where="src"),
     test_suite="tests",

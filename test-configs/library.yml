@@ -3,5 +3,6 @@ default_context:
   git_org_name: bbugyi200
   git_repo_name: library
   package_name: library
+  pypi_package_name: library
   package_description: "A test library."
   package_type: library
