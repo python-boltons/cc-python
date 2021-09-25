@@ -5,7 +5,7 @@
     "git_org_name": "{{ cookiecutter.github_username }}",
     "git_repo_name": "",
     "package_name": "{{ cookiecutter.git_repo_name|trim|lower|replace('-', '_') }}",
-    "read_the_docs_domain": "{{ cookiecutter.package_name }}",
+    "pypi_package_name": "{{ cookiecutter.package_name }}",
     "package_description": "A python package for {{ cookiecutter.package_name }}.",
     "package_type": ["application", "library"]
 }
