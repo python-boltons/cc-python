@@ -13,8 +13,8 @@ project status badges:
 
 version badges:
 
-[![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }})](https://pypi.org/project/{{ cookiecutter.package_name }}/)
+[![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
 [![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cc-python&message=2021.09.23-2&color=d4aa00&logo=cookiecutter&logoColor=d4aa00)](https://github.com/bbugyi200/cc-python)
 [![Docker: bbugyi/python](https://img.shields.io/static/v1?label=bbugyi%20%2F%20python&message=2021.09.22-6&color=8ec4ad&logo=docker&logoColor=8ec4ad)](https://github.com/bbugyi200/docker-python)
 
@@ -67,17 +67,17 @@ python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
 # install {{ cookiecutter.package_name }}
-pipx install {{ cookiecutter.package_name }}
+pipx install {{ cookiecutter.pypi_package_name }}
 ```
 
 ### Using `pip` to Install
 {%- endif %}
 
-To install `{{ cookiecutter.package_name }}` using [pip][9], run the following
+To install `{{ cookiecutter.pypi_package_name }}` using [pip][9], run the following
 commands in your terminal:
 
 ``` shell
-python3 -m pip install --user {{ cookiecutter.package_name }}  # install {{ cookiecutter.package_name }}
+python3 -m pip install --user {{ cookiecutter.pypi_package_name }}  # install {{ cookiecutter.package_name }}
 ```
 
 If you don't have pip installed, this [Python installation guide][10] can guide
