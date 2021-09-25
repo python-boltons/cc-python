@@ -8,7 +8,7 @@ project status badges:
 
 [![CI Workflow](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }})
-[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.pypi_package_name }}/badge/?version=latest)](https://{{ cookiecutter.pypi_package_name }}.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.read_the_docs_domain }}/badge/?version=latest)](https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest/?badge=latest)
 [![Package Health](https://snyk.io/advisor/python/{{ cookiecutter.pypi_package_name }}/badge.svg)](https://snyk.io/advisor/python/{{ cookiecutter.pypi_package_name }})
 
 version badges:
@@ -98,9 +98,9 @@ you through the process.
 * [Documentation][1]: This project's full documentation.
 
 
-[1]: https://{{ cookiecutter.pypi_package_name }}.readthedocs.io/en/latest
+[1]: https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest
 [2]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
-[3]: https://{{ cookiecutter.pypi_package_name }}.readthedocs.io/en/latest/modules.html
+[3]: https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest/modules.html
 [4]: https://github.com/bbugyi200/cc-python
 [5]: https://github.com/cookiecutter/cookiecutter
 [6]: https://docs.readthedocs.io/en/stable/
