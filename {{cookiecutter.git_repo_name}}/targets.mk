@@ -135,7 +135,8 @@ check-requirements: ## Check if requirements*.txt files are up-to-date.
 
 ### Bootstraps virtual environment for first use.
 $(VENV_ACTIVATE):
-	python3 -m venv $(VENV)
+	pip install --user virtualenv
+	python3 -m virtualenv --python /pyenv/shims/python3.7 $(VENV)
 	$(PIP) install -U pip pip-tools
 
 .PHONY: check-cc
