@@ -163,5 +163,6 @@ clean: ## Remove build artifacts.
 	$(RM) -r .mypy_cache
 	$(RM) -r $(package).egg-info
 	$(RM) -r $(VENV)
+	$(RM) -r .tox
 	find . -type d -name '__pycache__' -exec rm -rf {} +
 	find . -type f -name '*.pyc' -exec rm -rf {} +
