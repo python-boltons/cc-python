@@ -15,7 +15,7 @@ cookiecutter repo.
 
 We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps are then needed to allow our new repository to
-talk to the outside world. Namely, we need to:
+talk to the outside world:
 
 * Add the `PYPI_API_TOKEN` secret to our new repository so CI is able to
   publish to PyPI. We can accomplish this by going to the following link
