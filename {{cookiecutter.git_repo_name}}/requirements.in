@@ -1,0 +1,5 @@
+{% if cookiecutter.package_type == "application" -%}
+pydantic
+pylogutils
+python-clap
+{%- endif %}
