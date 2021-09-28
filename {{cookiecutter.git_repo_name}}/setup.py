@@ -45,11 +45,13 @@ setup(
         "Programming Language :: Python :: 3.9",
     ],
     description=DESCRIPTION,
+    {%- if cookiecutter.package_type == "application" %}
     entry_points={
         "console_scripts": [
             "{{ cookiecutter.package_name }} = {{ cookiecutter.package_name }}.cli:main",
         ]
     },
+    {%- endif %}
     scripts=glob.glob("scripts/*"),
     license="MIT license",
     long_description=long_description(),
