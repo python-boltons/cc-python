@@ -1,6 +1,6 @@
 """Tests for the {{ cookiecutter.package_name }} package."""
 
-from {{ cookiecutter.package_name }}.{{ cookiecutter.package_module }} import dummy
+from {{ cookiecutter.package_name }} import dummy
 
 
 def test_dummy() -> None:
