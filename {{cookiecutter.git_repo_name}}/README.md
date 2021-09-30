@@ -95,6 +95,7 @@ you through the process.
   this project.
 * [CONTRIBUTING.md][7]: This document contains guidelines for developers
   interested in contributing to this project.
+* [Create a New Issue][13]: Create a new GitHub issue for this project.
 * [Documentation][1]: This project's full documentation.
 
 
@@ -110,3 +111,4 @@ you through the process.
 [10]: http://docs.python-guide.org/en/latest/starting/installation/
 [11]: https://github.com/pypa/pipx
 [12]: https://github.com/cruft/cruft
+[13]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
