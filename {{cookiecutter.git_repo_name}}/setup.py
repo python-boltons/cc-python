@@ -55,7 +55,7 @@ def _requires(reqtxt_basename: str) -> Iterator[str]:
     for req in reqs:
         if not req or req.lstrip().startswith(("#", "-")):
             continue
-        yield req
+        yield req.rsplit(" # ", 1)[0].strip()
 
 
 ###############################################################################
