@@ -6,6 +6,7 @@ from setuptools import find_namespace_packages, setup
 
 
 DESCRIPTION = "{{ cookiecutter.package_description }}"
+SUPPORTED_PYTHON_VERSIONS = [(3,), (3, 7), (3, 8), (3, 9)]
 
 
 def long_description() -> str:
@@ -39,10 +40,13 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
+    ]
+    + [
+        f"Programming Language :: Python :: {pyver_string}"
+        for pyver_string in [
+            f"{'.'.join(str(version_part) for version_part in pyver_tuple)}"
+            for pyver_tuple in SUPPORTED_PYTHON_VERSIONS
+        ]
     ],
     description=DESCRIPTION,
     {%- if cookiecutter.package_type == "application" %}
