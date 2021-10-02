@@ -9,17 +9,22 @@ project's version is derived from git tags using setuptools-scm[2].
 
 import glob
 from pathlib import Path
-from typing import Callable, Iterator, List, Tuple
+from typing import Iterator, List
 
 from setuptools import find_namespace_packages, setup
 
 
+###############################################################################
 # Configuration variables that are likely to need changing at some point.
+###############################################################################
 DESCRIPTION = "{{ cookiecutter.package_description }}"
 SUPPORTED_PYTHON_VERSIONS = [(3,), (3, 7), (3, 8), (3, 9)]
 USE_SCM_VERSION = {"fallback_version": "0.0.1"}
 
 
+###############################################################################
+# Helper functions.
+###############################################################################
 def long_description() -> str:
     """Returns the body of this project's page on PyPI."""
     return Path("README.md").read_text()
@@ -53,16 +58,20 @@ def _requires(reqtxt_basename: str) -> Iterator[str]:
         yield req
 
 
+###############################################################################
 # Derived variables.
-PRETTY_SUPPORTED_PYTHON_VERSIONS = [
+###############################################################################
+PRETTY_PYTHON_VERSIONS = [
     f"{'.'.join(str(v) for v in pyver)}"
     for pyver in sorted(SUPPORTED_PYTHON_VERSIONS)
 ]
-_PYTHON_REQUIRES = PRETTY_SUPPORTED_PYTHON_VERSIONS[0]
-PYTHON_REQUIRES = f">={_PYTHON_REQUIRES}"
+_PYTHON_REQUIRES = PRETTY_PYTHON_VERSIONS[0]
+PYTHON_REQUIRES = f">={_LOWEST_PYTHON_VERSION}"
 
 
+###############################################################################
 # The main event...
+###############################################################################
 setup(
     author="{{ cookiecutter.author }}",
     author_email="{{ cookiecutter.email }}",
@@ -75,7 +84,7 @@ setup(
     ]
     + [
         f"Programming Language :: Python :: {pretty_pyver}"
-        for pretty_pyver in PRETTY_SUPPORTED_PYTHON_VERSIONS
+        for pretty_pyver in PRETTY_PYTHON_VERSIONS
     ],
     description=DESCRIPTION,
     {%- if cookiecutter.package_type == "application" %}
