@@ -42,10 +42,10 @@ setup(
         "Natural Language :: English",
     ]
     + [
-        f"Programming Language :: Python :: {pyver_string}"
-        for pyver_string in [
-            f"{'.'.join(str(version_part) for version_part in pyver_tuple)}"
-            for pyver_tuple in SUPPORTED_PYTHON_VERSIONS
+        f"Programming Language :: Python :: {pretty_pyver}"
+        for pretty_pyver in [
+            f"{'.'.join(str(v) for v in pyver)}"
+            for pyver in SUPPORTED_PYTHON_VERSIONS
         ]
     ],
     description=DESCRIPTION,
