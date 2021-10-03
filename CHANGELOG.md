@@ -10,7 +10,9 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.09.23-2...HEAD)
 
-No notable changes have been made.
+### Miscellaneous
+
+* Cleaned up generated projects' `setup.py` file.
 
 ## [2021.09.23-2](https://github.com/bbugyi200/cc-python/compare/2021.09.23-1...2021.09.23-2)
 
