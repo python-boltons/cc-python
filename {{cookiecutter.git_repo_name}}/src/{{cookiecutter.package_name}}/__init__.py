@@ -3,7 +3,7 @@
 
 import logging as _logging
 
-from .{{ cookiecutter.package_module }} import dummy
+from .core import dummy
 {% endif %}
 
 __author__ = "{{ cookiecutter.author }}"
