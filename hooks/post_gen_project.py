@@ -76,7 +76,8 @@ def delete_package_type_files(package_type: str) -> None:
     files_to_delete.extend([module, test_module])
 
     for f2d in files_to_delete:
-        os.unlink(f2d)
+        if f2d.exists():
+            os.unlink(f2d)
 
 
 if __name__ == "__main__":
