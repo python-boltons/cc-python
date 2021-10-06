@@ -10,9 +10,9 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
    :caption: Table of Contents
 
     API Reference <modules>
-    CHANGELOG <changelog>
-    CONTRIBUTING <contributing>
-    README <readme>
+    Changelog <changelog>
+    Development Guide <contributing>
+    GitHub README <readme>
 
 
 Indices and Tables
