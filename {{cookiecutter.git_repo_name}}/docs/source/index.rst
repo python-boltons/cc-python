@@ -12,7 +12,7 @@ Welcome to {{ cookiecutter.package_name }}'s documentation!
     API Reference <modules>
     Changelog <changelog>
     Development Guide <contributing>
-    GitHub README <readme>
+    README <readme>
 
 
 Indices and Tables
