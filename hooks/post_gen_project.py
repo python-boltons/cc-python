@@ -66,7 +66,7 @@ def delete_package_type_files(package_type: str) -> None:
     full_package_path = src / "{{ cookiecutter.package_path }}"
 
     if package_type == "application":
-        module = full_package_path / "{{ cookiecutter.package_module }}.py"
+        module = full_package_path / "core.py"
         test_module = tests / "test_{{ cookiecutter.package_module }}.py"
     else:
         assert package_type == "library"
