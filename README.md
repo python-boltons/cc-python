@@ -69,10 +69,10 @@ git push -u origin master
 Now that we have pushed some code to it, we can cleanup our new repository a
 bit:
 
-* Add a description and tag the repository with relevant topics (at the very
-  least, tag the repo with the [python][9] and [cc-python][8] topics) by
-  clicking the little gear next to the "About" header (you may also want to
-  uncheck all boxes in the "Include in the home page" section).
+* Tag the repository with relevant topics (at the very least, tag the repo with
+  the [python][9] and [cc-python][8] topics) by clicking the little gear next
+  to the "About" header. Before leaving this menu, you may also want to uncheck
+  all boxes in the "Include in the home page" section.
 
 
 ## How to Propagate Changes to All Cookiecutter Projects
