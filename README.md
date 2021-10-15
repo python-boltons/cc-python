@@ -13,6 +13,8 @@ This section provides a demonstration of initializing a new cc-python project,
 say `foobar`, under some github organization, say `org`, using this
 cookiecutter repo.
 
+### 1) Setup the GitHub Repository
+
 We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps are then needed to allow our new repository to
 talk to the outside world:
@@ -24,6 +26,8 @@ talk to the outside world:
   on this step: https://github.com/org/foobar/settings/secrets/actions
 * [Import](https://readthedocs.org/dashboard/) the `foobar` project from
   [readthedocs][2].
+
+### 2) Use `cruft` to Generate a New Local Project
 
 We then use [cruft][6] to initialize a new project using this cookiecutter.
 Before we can do that, we need to install cruft (we recommend using [pipx][7]
@@ -45,9 +49,12 @@ cruft create https://github.com/bbugyi200/cc-python
 ```
 
 Answer all of the variable prompts that cruft produces (e.g. `org` for the
-`git_org_name` prompt and `foobar` for the `git_repo_name` prompt) and then run
-the following commands to push this new project to the repo you created earlier
-via GitHub's web interface:
+`git_org_name` prompt and `foobar` for the `git_repo_name` prompt).
+
+### 3) Initialize the Project
+
+Run the following commands to initialize your new local project and push this
+project to the repo you created earlier via GitHub's web interface:
 
 ```bash
 cd foobar
@@ -65,6 +72,8 @@ git commit -m 'Initialize project by running `make all`'
 # push project to github repo
 git push -u origin master
 ```
+
+### 4) Final Touches
 
 Now that we have pushed some code to it, we can cleanup our new repository a
 bit:
