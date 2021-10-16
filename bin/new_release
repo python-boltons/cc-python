@@ -7,6 +7,7 @@ readonly ROOT="$(dirname "${BIN}")"
 function run() {
     if [[ "$1" == "--draft" ]]; then
         local draft=true
+        shift
     fi
 
     local calendar_version="$(date +%Y.%m.%d)"
