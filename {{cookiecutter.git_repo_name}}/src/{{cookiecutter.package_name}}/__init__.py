@@ -3,8 +3,11 @@
 
 import logging as _logging
 
-from .core import dummy
-{% endif %}
+from ._core import dummy
+
+
+__all__ = ["dummy"]
+{%- endif %}
 
 __author__ = "{{ cookiecutter.author }}"
 __email__ = "{{ cookiecutter.email }}"
