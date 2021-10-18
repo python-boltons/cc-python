@@ -62,6 +62,16 @@ def _requires(reqtxt_basename: str) -> Iterator[str]:
         yield req.rsplit(" # ", 1)[0].strip()
 
 
+def get_scripts() -> List[str]:
+    """Returns value used for 'scripts' setuptools kwarg."""
+    scripts_dir_contents = glob.glob("scripts/*")
+    result = []
+    for script in scripts_dir_contents:
+        if not script.endswith(".md"):
+            result.append(script)
+    return result
+
+
 ###############################################################################
 # Derived variables.
 ###############################################################################
@@ -107,7 +117,7 @@ setup(
     package_dir={"": "src"},
     packages=find_namespace_packages(where="src"),
     python_requires=PYTHON_REQUIRES,
-    scripts=glob.glob("scripts/*"),
+    scripts=get_scripts(),
     test_suite="tests",
     tests_require=tests_require(),
     url="https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}",
