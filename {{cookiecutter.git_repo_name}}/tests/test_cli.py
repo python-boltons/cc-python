@@ -1,6 +1,6 @@
-"""Tests the {{ cookiecutter.package_name }}.cli module."""
+"""Tests the {{ cookiecutter.package_name }} project's CLI."""
 
-from {{ cookiecutter.package_name }}.cli import main
+from {{ cookiecutter.package_name }} import main
 
 
 def test_main() -> None:

@@ -1,4 +1,10 @@
 """{{ cookiecutter.package_description }}"""
+{%- if cookiecutter.package_type == "application" %}
+
+from ._cli import main
+
+
+{% endif -%}
 {%- if cookiecutter.package_type == "library" %}
 
 import logging as _logging
@@ -7,8 +13,8 @@ from ._core import dummy
 
 
 __all__ = ["dummy"]
-{%- endif %}
 
+{% endif -%}
 __author__ = "{{ cookiecutter.author }}"
 __email__ = "{{ cookiecutter.email }}"
 __version__ = "0.0.1"
