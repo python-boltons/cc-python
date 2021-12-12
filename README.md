@@ -73,7 +73,7 @@ git commit -m 'Initialize project by running `make all`'
 git push -u origin master
 ```
 
-#### 4) Release First Version
+#### 4) Release First Version to PyPI
 
 Run the following commands to release the first version (0.1.0) of this
 package:
