@@ -73,7 +73,27 @@ git commit -m 'Initialize project by running `make all`'
 git push -u origin master
 ```
 
-#### 4) Final Touches
+#### 4) Release First Version
+
+Run the following commands to release the first version (0.1.0) of this
+package:
+
+```bash
+# add changelog section for 0.1.0...
+vim CHANGELOG.md
+
+# commit the CHANGELOG.md file...
+git add -v CHANGELOG.md
+git commit -m "Update CHANGELOG for v0.1.0"
+
+# bump the project version to 0.1.0 using bumpversion...
+bumpversion minor
+
+# push these changes and the new git version tag to GitHub...
+git push && git push --tags
+```
+
+#### 5) Final Touches
 
 Now that we have pushed some code to it, we can cleanup our new repository a
 bit:
