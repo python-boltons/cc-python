@@ -4,6 +4,7 @@
 from ._cli import main
 
 
+__all__ = ["main"]
 {% endif -%}
 {%- if cookiecutter.package_type == "library" %}
 
