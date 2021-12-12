@@ -76,7 +76,7 @@ git push -u origin master
 #### 4) Release First Version to PyPI
 
 Run the following commands to release the first version (0.1.0) of this
-package:
+package to PyPI:
 
 ```bash
 # add changelog section for 0.1.0...
