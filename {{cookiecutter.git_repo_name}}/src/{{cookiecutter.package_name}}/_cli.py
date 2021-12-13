@@ -1,5 +1,7 @@
 """Contains the {{ cookiecutter.package_name }} package's main entry point."""
 
+from __future__ import annotations
+
 from typing import Sequence
 
 import clap
