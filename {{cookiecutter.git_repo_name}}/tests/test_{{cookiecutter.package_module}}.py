@@ -1,5 +1,7 @@
 """Tests for the {{ cookiecutter.package_name }} package."""
 
+from __future__ import annotations
+
 from {{ cookiecutter.package_name }} import dummy
 
 

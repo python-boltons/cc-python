@@ -1,5 +1,7 @@
 """Tests the {{ cookiecutter.package_name }} project's CLI."""
 
+from __future__ import annotations
+
 from {{ cookiecutter.package_name }} import main
 
 
