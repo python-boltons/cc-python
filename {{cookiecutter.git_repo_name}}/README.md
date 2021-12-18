@@ -2,8 +2,6 @@
 
 **{{ cookiecutter.package_description }}**
 
-## Badges 📛
-
 project status badges:
 
 [![CI Workflow](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
