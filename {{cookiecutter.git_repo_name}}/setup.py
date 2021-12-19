@@ -43,16 +43,6 @@ def install_requires() -> List[str]:
     return list(_requires("requirements.in"))
 
 
-def tests_require() -> List[str]:
-    """Test suite requirements.
-
-    Returns:
-        A list of the Python dependencies this project requires in order to run
-        its test suite.
-    """
-    return list(_requires("requirements-dev.in"))
-
-
 def _requires(reqtxt_basename: str) -> Iterator[str]:
     reqtxt = Path(__file__).parent / reqtxt_basename
     reqs = reqtxt.read_text().split("\n")
@@ -118,8 +108,6 @@ setup(
     packages=find_namespace_packages(where="src"),
     python_requires=PYTHON_REQUIRES,
     scripts=get_scripts(),
-    test_suite="tests",
-    tests_require=tests_require(),
     url="https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}",
     use_scm_version=USE_SCM_VERSION,
     zip_safe=False,
