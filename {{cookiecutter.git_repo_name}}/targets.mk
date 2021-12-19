@@ -41,7 +41,11 @@ all:  ## Build the package, build the docs, run all tests, and run all linters.
 all: build build-docs lint test
 
 .PHONY: lint
-lint: black isort pydocstyle flake8 mypy pylint ## Run all linting checks.
+lint: black isort pydocstyle flake8 mypy pylint quick-lints  ## Run all linting checks.
+
+.PHONY: quick-lints
+quick-lints: sync-dev-requirements  ## Run miscellaneous linting tasks.
+	$(SOURCE_VENV) ./bin/quick-lints
 
 .PHONY: black
 black: sync-dev-requirements  ## Run black checks.

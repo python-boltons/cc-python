@@ -9,6 +9,7 @@ typeguard
 
 ### Lint
 black
+cogapp ~= 3.3
 flake8
 isort
 mypy
