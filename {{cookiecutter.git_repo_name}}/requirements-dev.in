@@ -6,7 +6,7 @@ syrupy
 tox
 tox-pyenv
 typeguard
--e file:.#egg={{ cookiecutter.package_name }}>=0.dev
+-e file:.#egg={{ cookiecutter.pypi_package_name }}>=0.dev
 
 
 ### Lint
