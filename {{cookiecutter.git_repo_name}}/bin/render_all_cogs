@@ -85,7 +85,7 @@ function run() {
 }
 
 function cog_wrapper() {
-    cog --markers='[[[kooky.cog ]]] [[[end]]]' "$@"
+    cog --markers='[[[[[kooky.cog ]]]]] [[[[[end]]]]]' "$@"
 }
 
 if [[ "${SCRIPTNAME}" == "$(basename "${BASH_SOURCE[0]}")" ]]; then
