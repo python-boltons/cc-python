@@ -10,7 +10,9 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.10.03...HEAD)
 
-No notable changes have been made.
+### Changed
+
+* Upgrade default docker image to latest version: `bbugyi/python:2021.12.20`
 
 ## [2021.10.03](https://github.com/bbugyi200/cc-python/compare/2021.09.23-2...2021.10.03)
 

@@ -11,6 +11,7 @@ PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
 PYTHON = $(SOURCE_VENV) python
+PYTHON_VERSION := 3.8
 SOURCE_VENV = source $(VENV_ACTIVATE);
 SPHINX_APIDOC = $(SOURCE_VENV) sphinx-apidoc
 SPHINX_BUILD = $(SOURCE_VENV) sphinx-build
@@ -141,7 +142,7 @@ check-requirements: ## Check if requirements*.txt files are up-to-date.
 ### Bootstraps virtual environment for first use.
 $(VENV_ACTIVATE):
 	python3 -m pip install --user virtualenv
-	python3 -m virtualenv --python /pyenv/shims/python3.7 $(VENV)
+	python3 -m virtualenv --python /pyenv/shims/python$(PYTHON_VERSION) $(VENV)
 	$(PIP) install -U pip pip-tools
 
 .PHONY: check-cc

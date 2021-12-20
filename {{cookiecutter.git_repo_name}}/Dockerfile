@@ -1,4 +1,4 @@
-FROM bbugyi/python:2021.09.25
+FROM bbugyi/python:2021.12.20
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
