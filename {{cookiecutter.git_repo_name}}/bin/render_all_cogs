@@ -5,7 +5,7 @@
 #
 # Usage
 # -----
-# check_cogs [--check]
+# render_all_cogs [--check]
 #
 # Optional Arguments:
 # -------------------
