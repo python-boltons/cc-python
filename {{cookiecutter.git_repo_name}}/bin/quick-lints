@@ -14,6 +14,7 @@ ROOT="$(dirname "${BIN}")"
 source "${ROOT}"/lib/bugyi.sh
 
 function run() {
+    printf -- "---------- Running quick-lints Script ----------\n"
     log::info "[render_all_cogs] Ensuring that all cogs have already been rendered..."
     "${BIN}"/render_all_cogs --check
 }
