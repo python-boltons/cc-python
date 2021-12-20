@@ -8,6 +8,11 @@ if [[ "${BUGYI_HAS_BEEN_SOURCED}" != true ]]; then
     readonly BUGYI_HAS_BEEN_SOURCED=true
 
     # ---------- Global Variables ----------
+    readonly COLOR_GREEN='\033[38;5;2m'
+    readonly COLOR_PURPLE='\033[38;5;5m'
+    readonly COLOR_RED='\033[38;5;1m'
+    readonly COLOR_RESET='\033[0m'
+    readonly COLOR_YELLOW='\033[38;5;3m'
     readonly SCRIPTNAME="$(basename "$0")"
 
     if [[ -n "${BASH}" ]]; then
@@ -52,14 +57,40 @@ if [[ "${BUGYI_HAS_BEEN_SOURCED}" != true ]]; then
     readonly MY_XDG_DATA="${XDG_DATA}"/"${SCRIPTNAME}"
 fi
 
-# ---------- Function Definitions ----------
+
+#################################################################################
+# Convenience function used to terminate a script early with a non-zero exit
+# status.
+#
+# Usage
+# -----
+# die [-x N] MESSAGE [FMT_ARGS [...]]
+#
+# Positional Arguments
+# --------------------
+# MESSAGE
+#     The error message to log before terminating the script (accepts
+#     printf-style format arguments).
+#
+# FMT_ARGS
+#     printf-style format arguments.
+# 
+#
+# Optional Arguments
+# ------------------
+# -x N | --exit-code N
+#     Terminate the script with exit code N. Defaults to 1.
+#################################################################################
 function die() {
     local exit_code
-    if [[ "${!#}" =~ ^[1-9][0-9]*$ && "${!#}" -le 256 ]]; then
-        exit_code="${!#}"
+    if [[ "$1" == "--exit-code" || "$1" == "-x" ]]; then
+        shift
 
-        # Remove the last argument from $@.
-        set -- "${@:1:$(($# - 1))}"
+        exit_code="$1"
+        shift
+    elif [[ "$1" == "-x"* ]]; then
+        exit_code="${1:2}"
+        shift
     else
         exit_code=1
     fi
@@ -72,6 +103,9 @@ function die() {
         message="$(printf "$@")"
     fi
 
+    # An exit code of 2 is used to indicate an error occurred while parsing
+    # command-line arguments, so we treat this as a special case with a special
+    # error message.
     if [[ "${exit_code}" -eq 2 ]]; then
         message="Failed while parsing command-line arguments. Try '${SCRIPTNAME} --help' for more information.\n\n${message}"
     fi
@@ -80,18 +114,38 @@ function die() {
     exit "${exit_code}"
 }
 
-# Color palette
-readonly COLOR_GREEN='\033[38;5;2m'
-readonly COLOR_PURPLE='\033[38;5;5m'
-readonly COLOR_RED='\033[38;5;1m'
-readonly COLOR_RESET='\033[0m'
-readonly COLOR_YELLOW='\033[38;5;3m'
 
-function log::debug() { if [[ "${DEBUG}" = true || "${VERBOSE}" -gt 0 ]]; then _msg "debug" "${COLOR_PURPLE}" "$@"; fi; }
-function log::error() { _msg "error" "${COLOR_RED}" "$@"; }
-function log::info() { _msg "info" "${COLOR_GREEN}" "$@"; }
-function log::warning() { _msg "warning" "${COLOR_YELLOW}" "$@"; }
-function _msg() {
+#################################################################################
+# The following helper functions are used to provide some primitive logging
+# capability from bash scripts.
+#
+# Usage
+# -----
+# log::debug [-u N] MESSAGE [FMT_ARGS [...]]  # log debug message
+# log::error [-u N] MESSAGE [FMT_ARGS [...]]  # log error message
+# log::info [-u N] MESSAGE [FMT_ARGS [...]]  # log info message
+# log::warn [-u N] MESSAGE [FMT_ARGS [...]]  # log warning message
+#
+# Positional Arguments
+# --------------------
+# MESSAGE
+#     The message to log (accepts printf-style format arguments).
+#
+# FMT_ARGS
+#     printf-style format arguments.
+#
+# Optional Arguments
+# ------------------
+# -u N | --up N
+#     Use this option to specify that we go forward in the stack N times before
+#     crawling for metadata to be used to decorate our log message (e.g. line
+#     number, script name, function name).
+#################################################################################
+function log::debug() { if [[ "${DEBUG}" = true || "${VERBOSE}" -gt 0 ]]; then _log "debug" "${COLOR_PURPLE}" "$@"; fi; }
+function log::error() { _log "error" "${COLOR_RED}" "$@"; }
+function log::info() { _log "info" "${COLOR_GREEN}" "$@"; }
+function log::warning() { _log "warning" "${COLOR_YELLOW}" "$@"; }
+function _log() {
     local level="$1"
     shift
 
@@ -166,7 +220,60 @@ function _msg() {
         logger -t "${scriptname}"
 }
 
+
+#################################################################################
+# Printf function that uses pythonic format specifiers.
+#
+# Usage
+# -----
+# pyprintf MESSAGE [FMT_ARGS [...]]
+#
+# Positional Arguments
+# --------------------
+# MESSAGE
+#     The message to print to stdout [accepts pythonic .format() method styled
+#     format arguments].
+#
+# FMT_ARGS
+#     Format arguments.
+#
+# Examples
+# --------
+# pyprintf "{0} {1} {0}" "foo" "bar"  =>  "foo bar foo"
+#################################################################################
 function pyprintf() {
-    pycmd="import sys; args = ['\\n'.join(a.split(r'\\n')) for a in sys.argv[1:]]; print(args[0].format(*args[1:]), end='')"
-    python -c "${pycmd}" "$@"
+    local pycmd="import sys; args = ['\\n'.join(a.split(r'\\n')) for a in sys.argv[1:]]; print(args[0].format(*args[1:]), end='')"
+    python3 -c "${pycmd}" "$@"
+}
+
+
+#################################################################################
+# Encodes a URL string.
+#
+# Usage
+# -----
+# urlencode STRING [EXCLUDED_CHARS]
+#
+# Positional Arguments
+# --------------------
+# STRING
+#     The string to encode.
+#
+# EXCLUDED_CHARS
+#     A string containing characters that should not be encoded.
+#
+# Examples
+# --------
+# urlencode "foo bar"  =>  "foo%20bar"
+# urlencode "/path/to/foo bar" "/"  =>  "/path/to/foo%20bar"
+#################################################################################
+urlencode() {
+    local string="$1"
+    shift
+
+    local excluded_chars="$1"
+    shift
+
+    local pycmd="from urllib.parse import quote; import sys; print(quote(sys.argv[1], sys.argv[2]))"
+    python3 -c "${pycmd}" "${string}" "${excluded_chars}"
 }
