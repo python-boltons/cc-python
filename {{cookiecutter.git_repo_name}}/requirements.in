@@ -1,5 +1,5 @@
 {% if cookiecutter.package_type == "application" -%}
-pydantic
-pylogutils
-python-clap
+pydantic ~= 1.8
+python-clap ~= 0.3.0
+python-logrus ~= 0.1.0
 {%- endif %}
