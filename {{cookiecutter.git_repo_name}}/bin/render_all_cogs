@@ -19,6 +19,8 @@ ROOT="$(dirname "${BIN}")"
 
 source "${ROOT}"/lib/bugyi.sh
 
+readonly COG_MARKERS="[[[[[kooky.cog ]]]]] [[[[[end]]]]]"
+
 COG_TEMPLATE_FILES=( "README.md" )
 
 function run() {
@@ -33,10 +35,9 @@ function run() {
     trap 'rm -rf ${tmp_fname} ${tmp_cog_output_fname}' EXIT
 
     for cog_template_fname in "${COG_TEMPLATE_FILES[@]}"; do
-        local out_fname="$(mktemp --suffix '.md')"
-
         if [[ "${check_flag_is_set}" == false ]]; then
-            
+            local out_fname="$(mktemp --suffix '.md')"
+
             log::info \
                 "Checking that cog template '%s' has been rendered..." \
                 "${cog_template_fname}" \
@@ -65,7 +66,7 @@ function run() {
         fi
 
         cog_wrapper "${cog_template_fname}" >"${tmp_cog_output_fname}"
-        if ! cmp "${cog_template_fname}" "${tmp_cog_output_fname}"; then
+        if ! cmp "${cog_template_fname}" "${tmp_cog_output_fname}" 1>&2; then
             {
                 diff "${cog_template_fname}" "${tmp_cog_output_fname}"
                 echo
@@ -85,7 +86,7 @@ function run() {
 }
 
 function cog_wrapper() {
-    cog --markers='[[[[[kooky.cog ]]]]] [[[[[end]]]]]' "$@"
+    cog --markers="${COG_MARKERS}" "$@"
 }
 
 if [[ "${SCRIPTNAME}" == "$(basename "${BASH_SOURCE[0]}")" ]]; then
