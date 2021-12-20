@@ -110,7 +110,7 @@ function die() {
         message="Failed while parsing command-line arguments. Try '${SCRIPTNAME} --help' for more information.\n\n${message}"
     fi
 
-    emsg --up 1 "${message}"
+    log::error --up 1 "${message}"
     exit "${exit_code}"
 }
 
