@@ -2,14 +2,14 @@
 
 **{{ cookiecutter.package_description }}**
 
-project status badges:
+_project status badges:_
 
 [![CI Workflow](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }})
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.read_the_docs_domain }}/badge/?version=latest)](https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest/?badge=latest)
 [![Package Health](https://snyk.io/advisor/python/{{ cookiecutter.pypi_package_name }}/badge.svg)](https://snyk.io/advisor/python/{{ cookiecutter.pypi_package_name }})
 
-version badges:
+_version badges:_
 
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
