@@ -15,7 +15,7 @@ source "${ROOT}"/lib/bugyi.sh
 
 function run() {
     printf -- "\n---------- Running quick-lints Script ----------\n"
-    log::info "[render_all_cogs] Ensuring that all cogs have already been rendered..."
+    log::info "Running 'render_all_cogs' script to verify that any existing cogs have been rendered..."
     "${BIN}"/render_all_cogs --check
 }
 
