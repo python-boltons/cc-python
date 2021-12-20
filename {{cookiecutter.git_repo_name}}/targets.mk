@@ -157,7 +157,7 @@ update-cc: ## Update the project to the latest version of the cookiecutter
 .PHONY: update-snapshots
 update-snapshots: ## Update pytest snapshots
 update-snapshots: sync-dev-requirements
-	$(PYTHON) -m pytest --snapshot-update src tests
+	$(PYTHON) -m pytest -v --snapshot-update src tests
 
 .PHONY: dev-shell
 dev-shell: sync-dev-requirements  ## Launch a bash shell with the python environment for this project. If docker is enabled, this launches a shell inside the container.
