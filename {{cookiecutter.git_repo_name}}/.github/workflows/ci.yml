@@ -51,6 +51,7 @@ jobs:
           make lint
   check_cc_and_requirements:
     runs-on: [ubuntu-latest]
+    if: github.ref != 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
 
