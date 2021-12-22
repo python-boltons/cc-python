@@ -10,7 +10,9 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/bbugyi200/cc-python/compare/2021.12.20...HEAD)
 
-No notable changes have been made.
+### Changed
+
+* Moved `cc-python` GitHub repo from `bbugyi200` user account to `python-boltons` organization.
 
 ## [2021.12.20](https://github.com/bbugyi200/cc-python/compare/2021.10.03...2021.12.20)
 
