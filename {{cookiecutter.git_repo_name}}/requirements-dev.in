@@ -5,7 +5,6 @@ pytest-mock
 syrupy
 tox
 tox-pyenv
-typeguard
 -e file:.#egg={{ cookiecutter.pypi_package_name }}>=0.dev
 
 ### Lint
