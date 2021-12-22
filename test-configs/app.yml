@@ -4,5 +4,6 @@ default_context:
   git_repo_name: app
   package_name: app
   pypi_package_name: app
+  read_the_docs_domain: app
   package_description: "A test application."
   package_type: application

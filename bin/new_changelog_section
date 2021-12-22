@@ -30,7 +30,7 @@ function run() {
             "${SCRIPTNAME}"
         return 1
     else
-        local new_lines="## [Unreleased](https://github.com/bbugyi200/${repo_name}/compare/${new_version}...HEAD)\n\n${NO_CHANGES_MARKER}\n\n## [${new_version}](https://github.com/bbugyi200/${repo_name}/compare/${old_version}...${new_version})\n"
+        local new_lines="## [Unreleased](https://github.com/python-boltons/${repo_name}/compare/${new_version}...HEAD)\n\n${NO_CHANGES_MARKER}\n\n## [${new_version}](https://github.com/python-boltons/${repo_name}/compare/${old_version}...${new_version})\n"
 
         printf "%s: Adding new '%s' section to CHANGELOG.md.\n" \
             "${SCRIPTNAME}" \

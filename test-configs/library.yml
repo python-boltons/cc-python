@@ -1,8 +1,9 @@
 default_context:
   github_username: bbugyi200
-  git_org_name: bbugyi200
+  git_org_name: python-boltons
   git_repo_name: library
   package_name: library
-  pypi_package_name: library
-  package_description: "A test library."
+  pypi_package_name: bolton-library
+  read_the_docs_domain: bolton-library
+  package_description: "A test bolton library."
   package_type: library

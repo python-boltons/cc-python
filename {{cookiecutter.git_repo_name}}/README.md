@@ -13,8 +13,8 @@ _version badges:_
 
 [![Project Version](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_package_name }})](https://pypi.org/project/{{ cookiecutter.pypi_package_name }}/)
-[![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cc-python&message=2021.12.20&color=d4aa00&logo=cookiecutter&logoColor=d4aa00)](https://github.com/bbugyi200/cc-python)
-[![Docker: bbugyi/python](https://img.shields.io/static/v1?label=bbugyi%20%2F%20python&message=2021.12.20&color=8ec4ad&logo=docker&logoColor=8ec4ad)](https://github.com/bbugyi200/docker-python)
+[![Cookiecutter: cc-python](https://img.shields.io/static/v1?label=cc-python&message=2021.12.20&color=d4aa00&logo=cookiecutter&logoColor=d4aa00)](https://github.com/python-boltons/cc-python)
+[![Docker: pythonboltons/main](https://img.shields.io/static/v1?label=pythonboltons%20%2F%20main&message=2021.12.20&color=8ec4ad&logo=docker&logoColor=8ec4ad)](https://github.com/python-boltons/docker-python)
 
 
 ## Installation 🗹
@@ -68,7 +68,7 @@ you through the process.
 [1]: https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest
 [2]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CHANGELOG.md
 [3]: https://{{ cookiecutter.read_the_docs_domain }}.readthedocs.io/en/latest/modules.html
-[4]: https://github.com/bbugyi200/cc-python
+[4]: https://github.com/python-boltons/cc-python
 [5]: https://github.com/cookiecutter/cookiecutter
 [6]: https://docs.readthedocs.io/en/stable/
 [7]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/blob/master/CONTRIBUTING.md

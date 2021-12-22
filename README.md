@@ -1,4 +1,4 @@
-# cc-python [![CI Workflow](https://github.com/bbugyi200/cc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/bbugyi200/cc-python/actions/workflows/ci.yml) [![Version](https://img.shields.io/static/v1?label=version&message=2021.12.20&color=4d4dff)](https://github.com/bbugyi200/cc-python/blob/master/CHANGELOG.md#20211220)
+# cc-python [![CI Workflow](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml) [![Version](https://img.shields.io/static/v1?label=version&message=2021.12.20&color=4d4dff)](https://github.com/python-boltons/cc-python/blob/master/CHANGELOG.md#20211220)
 
 This repository contains the [cookiecutter] that I use for all of my Python
 projects. Refer to [this link][8] for a list of all projects that were
@@ -45,7 +45,7 @@ pipx install cruft
 We then run the following command to generate a new project using cruft:
 
 ```bash
-cruft create https://github.com/bbugyi200/cc-python
+cruft create https://github.com/python-boltons/cc-python
 ```
 
 Answer all of the variable prompts that cruft produces (e.g. `org` for the
@@ -144,7 +144,7 @@ find . -type f -name '*.rej' -delete
 [2]: https://docs.readthedocs.io/en/stable/
 [3]: https://github.com/cruft/cruft/issues/49
 [4]: https://stackoverflow.com/questions/34585865/what-are-rej-files-which-are-created-during-merge
-[5]: https://github.com/bbugyi200?tab=repositories
+[5]: https://github.com/python-boltons?tab=repositories
 [6]: https://github.com/cruft/cruft
 [7]: https://github.com/pypa/pipx
 [8]: https://github.com/topics/cc-python

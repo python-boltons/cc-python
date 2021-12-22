@@ -20,7 +20,7 @@ help:  ## Print this message.
 .PHONY: test
 test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs tests by generating projects using this cookiecutter.
 
-test-%: export CC_REPO_URL=https://github.com/bbugyi200/cc-python
+test-%: export CC_REPO_URL=https://github.com/python-boltons/cc-python
 test-%: $(VENV_ACTIVATE)
 	$(RM) -rf build/$*/requirements*.txt
 	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
