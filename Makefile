@@ -21,15 +21,10 @@ help:  ## Print this message.
 test:  $(foreach TEST_CONFIG,$(ALL_TEST_CONFIGS),test-$(TEST_CONFIG))  ## Runs tests by generating projects using this cookiecutter.
 
 test-%: export CC_REPO_URL=https://github.com/bbugyi200/cc-python
-test-%: $(VENV_ACTIVATE) typeguard-hack
+test-%: $(VENV_ACTIVATE)
 	$(RM) -rf build/$*/requirements*.txt
 	$(PYTHON) -m cruft create --config-file test-configs/$*.yml --output-dir build --no-input --overwrite-if-exists .
 	cd build/$* && make use-docker && make all && make check-requirements && make check-cc
-
-.PHONY: typeguard-hack
-typeguard-hack:
-	# HACK: Resolves weird permission errors with typeguard files.
-	sudo -v && [[ -d build/$* ]] && sudo find build/$* -name "*-typeguard.pyc" -delete || true
 
 $(VENV_ACTIVATE):
 	python3 -m venv $(VENV)
