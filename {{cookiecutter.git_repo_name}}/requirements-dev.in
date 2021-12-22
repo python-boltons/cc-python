@@ -12,7 +12,7 @@ black
 cogapp ~= 3.3
 flake8
 isort
-mypy != 0.920, != 0.921  # workaround for https://github.com/samuelcolvin/pydantic/pull/3175#issuecomment-914897604
+mypy != 0.920, != 0.921, != 0.930  # workaround for https://github.com/samuelcolvin/pydantic/pull/3175
 pydocstyle[toml]
 pylint
 
