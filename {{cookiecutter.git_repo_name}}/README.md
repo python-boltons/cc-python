@@ -39,7 +39,7 @@ pipx install {{ cookiecutter.pypi_package_name }}
 ### Using `pip` to Install
 {%- endif %}
 
-To install `{{ cookiecutter.pypi_package_name }}` using [pip][9], run the following
+To install `{{ cookiecutter.package_name }}` using [pip][9], run the following
 commands in your terminal:
 
 ``` shell
