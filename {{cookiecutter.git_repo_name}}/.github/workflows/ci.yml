@@ -58,12 +58,12 @@ jobs:
         uses: actions/setup-python@v2
 
       - name: Check that requirements are up-to-date.
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/master' && ! startsWith(github.ref, 'refs/tags')
         run: |
           make check-requirements
 
       - name: Check that this project is up-to-date with cookiecutter.
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/master' && ! startsWith(github.ref, 'refs/tags')
         run: |
           make check-cc
   publish:
