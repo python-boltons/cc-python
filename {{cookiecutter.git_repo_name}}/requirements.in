@@ -1,5 +1,4 @@
 {% if cookiecutter.package_type == "application" -%}
-pydantic ~= 1.8
-python-clap ~= 0.3.0
-python-logrus ~= 0.1.0
+bolton-clack ~= 0.1.0
+bolton-logrus ~= 0.1.0
 {%- endif %}
