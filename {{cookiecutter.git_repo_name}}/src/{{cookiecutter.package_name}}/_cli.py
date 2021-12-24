@@ -4,29 +4,27 @@ from __future__ import annotations
 
 from typing import Sequence
 
-import clap
-from pydantic.dataclasses import dataclass
+import clack
 
 
-@dataclass(frozen=True)
-class Arguments(clap.Arguments):
+class Config(clack.Config):
     """Command-line arguments."""
 
+    @classmethod
+    def from_cli_args(cls, argv: Sequence[str]) -> Config:
+        """Parses command-line arguments."""
+        parser = clack.Parser()
 
-def parse_cli_args(argv: Sequence[str]) -> Arguments:
-    """Parses command-line arguments."""
-    parser = clap.Parser()
+        args = parser.parse_args(argv[1:])
+        kwargs = vars(args)
 
-    args = parser.parse_args(argv[1:])
-    kwargs = vars(args)
-
-    return Arguments(**kwargs)
+        return cls(**kwargs)
 
 
-def run(args: Arguments) -> int:
+def run(cfg: Config) -> int:
     """This function acts as this tool's main entry point."""
-    del args
+    del cfg
     return 0
 
 
-main = clap.main_factory(parse_cli_args, run)
+main = clack.main_factory(run, Config)
