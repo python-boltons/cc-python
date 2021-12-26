@@ -144,7 +144,7 @@ function die() {
 function log::debug() { if [[ "${DEBUG}" = true || "${VERBOSE}" -gt 0 ]]; then _log "debug" "${COLOR_PURPLE}" "$@"; fi; }
 function log::error() { _log "error" "${COLOR_RED}" "$@"; }
 function log::info() { _log "info" "${COLOR_GREEN}" "$@"; }
-function log::warning() { _log "warning" "${COLOR_YELLOW}" "$@"; }
+function log::warn() { _log "warning" "${COLOR_YELLOW}" "$@"; }
 function _log() {
     local level="$1"
     shift
