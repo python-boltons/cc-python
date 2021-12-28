@@ -34,7 +34,7 @@ define runtests
 		--cov-branch \
 		--doctest-modules \
 		--doctest-report ndiff \
-		# Don't remove this comment! It allows us to end the last CLI option with a backslash.
+		# Don't remove this comment!
 endef
 
 .PHONY: all
