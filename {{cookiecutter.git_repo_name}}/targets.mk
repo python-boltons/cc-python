@@ -71,7 +71,8 @@ flake8: sync-dev-requirements  ## Run flake8 checks.
 .PHONY: mypy
 mypy: sync-dev-requirements  ## Run mypy checks.
 	$(PYTHON) -m mypy src
-	$(PYTHON) -m mypy tests
+	# HACK: Fixes weird numpy error that seemed to happen randomly.
+	bash -c "$(SOURCE_VENV) { python -m mypy tests || python -m mypy tests; }"
 
 .PHONY: pylint
 pylint: sync-dev-requirements  ## Run pylint checks.
