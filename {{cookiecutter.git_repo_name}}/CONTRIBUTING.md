@@ -21,7 +21,7 @@ If you are proposing a feature:
 
 ## Developer's Guide
 
-### 🔢 Basic Usage
+### Basic Usage 🔢
 
 Before making a PR please run the following
 
@@ -30,7 +30,7 @@ Before making a PR please run the following
 * `make lint` to check for any format or convention issues
 * `make test` to run all tests
 
-### ❓ How do I ...?
+### How do I ... ❓
 
 <details><summary>🔧 See available make targets</summary>
 
