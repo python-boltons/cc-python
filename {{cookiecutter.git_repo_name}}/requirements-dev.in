@@ -1,5 +1,4 @@
 ### Tests
-bolton-logrus ~= 0.1.0
 pytest
 pytest-cov
 pytest-mock
