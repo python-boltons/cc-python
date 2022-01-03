@@ -7,6 +7,7 @@ SHELL := /bin/bash
 CRUFT = $(PYTHON) -m cruft
 DOCS_SOURCE := ./docs/source
 DOCS_BUILD_DIR := ./docs/build
+MIN_TEST_COV := 80
 PIP = $(PYTHON) -m pip
 PIP_COMPILE = $(PYTHON) -m piptools compile --allow-unsafe --no-emit-index-url -q --no-emit-trusted-host
 PIP_SYNC = $(PYTHON) -m piptools sync
@@ -28,7 +29,7 @@ define runtests
 		-vv \
 		--cov=src/{{ cookiecutter.package_path }} \
 		--cov-config=setup.cfg \
-		--cov-fail-under=80 \
+		--cov-fail-under=$(MIN_TEST_COV) \
 		--cov-report=xml:coverage.xml \
 		--cov-report=term-missing \
 		--cov-branch \
