@@ -10,7 +10,9 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/python-boltons/cc-python/compare/2021.12.22...HEAD)
 
-No notable changes have been made.
+### Changed
+
+* Migrate applications to use version 0.2.0 of the `bolton-clack` package.
 
 ## [2021.12.22](https://github.com/python-boltons/cc-python/compare/2021.12.20...2021.12.22)
 
