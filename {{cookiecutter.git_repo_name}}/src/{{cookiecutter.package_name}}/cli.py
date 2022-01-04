@@ -16,7 +16,7 @@ class Config(clack.Config):
         parser = clack.Parser()
 
         args = parser.parse_args(argv[1:])
-        kwargs = vars(args)
+        kwargs = clack.filter_cli_args(args)
 
         return cls(**kwargs)
 
