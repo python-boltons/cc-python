@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from {{ cookiecutter.package_name }} import main
+from {{ cookiecutter.package_name }}.cli import main
 
 
 def test_main() -> None:
