@@ -1,4 +1,4 @@
 {% if cookiecutter.package_type == "application" -%}
-bolton-clack ~= 0.1.3
+bolton-clack ~= 0.2.0
 bolton-logrus ~= 0.1.0
 {%- endif %}
