@@ -70,7 +70,7 @@ def delete_package_type_files(package_type: str) -> None:
         test_module = tests / "test_{{ cookiecutter.package_module }}.py"
     else:
         assert package_type == "library"
-        module = full_package_path / "_cli.py"
+        module = full_package_path / "cli.py"
         test_module = tests / "test_cli.py"
 
     files_to_delete.extend([module, test_module])
