@@ -27,4 +27,4 @@ def run(cfg: Config) -> int:
     return 0
 
 
-main = clack.main_factory(run, Config)
+main = clack.main_factory("{{ cookiecutter.package_name }}", run)
