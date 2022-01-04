@@ -23,7 +23,9 @@ def main() -> None:
 def create_git_repo(git_repo_name: str) -> None:
     """Initializes a new git repository."""
     if Path(".git").exists():
-        print("[WARNING | create_git_repo]: The .git directory already exists.")
+        print(
+            "[WARNING | create_git_repo]: The .git directory already exists."
+        )
         return
 
     subprocess.run(
