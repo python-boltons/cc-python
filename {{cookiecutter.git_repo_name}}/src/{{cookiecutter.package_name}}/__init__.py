@@ -1,4 +1,7 @@
 """{{ cookiecutter.package_description }}"""
+{%- if cookiecutter.package_type == "application" %}
+
+{% endif -%}
 {%- if cookiecutter.package_type == "library" %}
 
 import logging as _logging
