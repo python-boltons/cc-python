@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/python-boltons/cc-python/compare/2021.12.22...HEAD)
+## [Unreleased](https://github.com/python-boltons/cc-python/compare/2022.01.04...HEAD)
+
+No notable changes have been made.
+
+## [2022.01.04](https://github.com/python-boltons/cc-python/compare/2021.12.22...2022.01.04)
 
 ### Changed
 
