@@ -98,10 +98,12 @@ git push && git push --tags
 Now that we have pushed some code to it, we can cleanup our new repository a
 bit:
 
+* Click on the little gear next to the "About" header on this project's GitHub
+  page.
+* Add this project's ReadTheDocs URL to the "Website" input box.
 * Tag the repository with relevant topics (at the very least, tag the repo with
-  the [python][9] and [cc-python][8] topics) by clicking the little gear next
-  to the "About" header. Before leaving this menu, you may also want to uncheck
-  all boxes in the "Include in the home page" section.
+  the [python][9] and [cc-python][8] topics).
+* Uncheck all boxes in the "Include in the home page" section.
 
 
 ## How to Propagate Changes to All Cookiecutter Projects
