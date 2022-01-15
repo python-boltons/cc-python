@@ -63,7 +63,7 @@ stdout, _ = popen.communicate()
 print("```", stdout.decode().strip(), "```", sep="\n")
 ]]]]] -->
 <!-- [[[[[end]]]]] -->
-{&- endif %}
+{%- endif %}
 
 <!-- [[[[[kooky.cog
 from pathlib import Path
