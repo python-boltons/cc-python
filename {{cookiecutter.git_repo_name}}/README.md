@@ -48,7 +48,22 @@ python3 -m pip install --user {{ cookiecutter.pypi_package_name }}  # install {{
 
 If you don't have pip installed, this [Python installation guide][10] can guide
 you through the process.
+{%- if cookiecutter.package_type == "application" %}
 
+
+## Command-Line Interface (CLI)
+
+The output from running `{{ cookiecutter.package_name }} --help` is shown below:
+
+<!-- [[[[[kooky.cog
+import subprocess
+
+popen = subprocess.Popen(["{{ cookiecutter.package_name }}", "--help"], stdout=subprocess.PIPE)
+stdout, _ = popen.communicate()
+print("```", stdout.decode().strip(), "```", sep="\n")
+]]]]] -->
+<!-- [[[[[end]]]]] -->
+{&- endif %}
 
 <!-- [[[[[kooky.cog
 from pathlib import Path
