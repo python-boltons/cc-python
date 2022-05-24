@@ -1,5 +1,5 @@
 {% if cookiecutter.package_type == "application" -%}
 bolton-clack ~= 0.3.1
 bolton-logrus ~= 0.1.0
-pip != 21.1.1  # HACK: See https://github.com/jazzband/pip-tools/issues/1623.
+pip != 21.1.1  # HACK: https://github.com/jazzband/pip-tools/issues/1623
 {%- endif %}
