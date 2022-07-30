@@ -120,3 +120,6 @@ venv.bak/
 
 # pyright config file
 pyrightconfig.json
+
+# local sqlite databases
+*.db
