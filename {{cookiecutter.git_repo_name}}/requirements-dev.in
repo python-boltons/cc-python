@@ -12,15 +12,15 @@ black
 cogapp ~= 3.3
 flake8
 isort
-mypy != 0.920, != 0.921, != 0.930  # workaround for https://github.com/samuelcolvin/pydantic/pull/3175
+mypy
 pydocstyle[toml]
 pylint
 
 ### Docs
-m2r2
-sphinx ~= 4.3.1  # ATTOW, 'sphinx>=4.4.0' requires a 'importlib-metadata' version that conflicts with what 'cruft' requires.
+m2r2 != 0.3.3  # since this version requires docutils>=0.19 (see https://github.com/CrossNox/m2r2/compare/v0.3.2...v0.3.3)
+sphinx
 sphinx-rtd-theme
-sphinx-autodoc-typehints ~= 1.17.1  # since >=1.18 requires sphinx >=4.5
+sphinx-autodoc-typehints
 
 ### Misc
 bump2version
