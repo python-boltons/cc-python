@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16...HEAD)
 
-No notable changes have been made.
+* Fix readthedocs build by adding `build.os` option.
 
 ## [2024.01.16](https://github.com/python-boltons/cc-python/compare/2022.01.04...2024.01.16)
 
