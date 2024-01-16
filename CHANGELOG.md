@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/python-boltons/cc-python/compare/2022.01.04...HEAD)
 
-No notable changes have been made.
+* Fix install failure when structlog>=23.
+* Fix test failure when tox>=4.
 
 ## [2022.01.04](https://github.com/python-boltons/cc-python/compare/2021.12.22...2022.01.04)
 
