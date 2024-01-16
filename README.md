@@ -13,7 +13,7 @@ This section provides a demonstration of initializing a new cc-python project,
 say `foobar`, under some github organization, say `org`, using this
 cookiecutter repo.
 
-#### 1) Setup the GitHub repository
+#### 1) Create a new GitHub repository
 
 We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps are then needed to allow our new repository to
