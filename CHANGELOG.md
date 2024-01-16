@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...HEAD)
 
-No notable changes have been made.
+* Upgrade to pythonboltons/main:2024.01.16 docker image.
 
 ## [2024.01.16-2](https://github.com/python-boltons/cc-python/compare/2024.01.16-1...2024.01.16-2)
 
