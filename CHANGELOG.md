@@ -14,7 +14,7 @@ No notable changes have been made.
 
 ## [2024.01.16-2](https://github.com/python-boltons/cc-python/compare/2024.01.16-1...2024.01.16-2)
 
-* Fixed github-labeler permission issues (see
+* Fix github-labeler permission issues (see
   [ghaction-github-labeler#184](http://github.com/crazy-max/ghaction-github-labeler/issues/184)).
 
 ## [2024.01.16-1](https://github.com/python-boltons/cc-python/compare/2024.01.16...2024.01.16-1)
