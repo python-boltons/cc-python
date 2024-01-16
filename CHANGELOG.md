@@ -8,9 +8,14 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/python-boltons/cc-python/compare/2022.01.04...HEAD)
+## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.15...HEAD)
 
 No notable changes have been made.
+
+## [2024.01.15](https://github.com/python-boltons/cc-python/compare/2022.01.04...2024.01.15)
+
+* Fix install failure when structlog>=23.
+* Fix test failure when tox>=4.
 
 ## [2022.01.04](https://github.com/python-boltons/cc-python/compare/2021.12.22...2022.01.04)
 
