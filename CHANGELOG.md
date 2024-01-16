@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-1...HEAD)
+## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...HEAD)
+
+No notable changes have been made.
+
+## [2024.01.16-2](https://github.com/python-boltons/cc-python/compare/2024.01.16-1...2024.01.16-2)
 
 * Fixed github-labeler permission issues (see
   [ghaction-github-labeler#184][http://github.com/crazy-max/ghaction-github-labeler/issues/184]).

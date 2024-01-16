@@ -1,4 +1,4 @@
-# cc-python [![CI Workflow](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml) [![Version](https://img.shields.io/static/v1?label=version&message=2024.01.16-1&color=4d4dff)](https://github.com/python-boltons/cc-python/blob/master/CHANGELOG.md#20240116-1)
+# cc-python [![CI Workflow](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/python-boltons/cc-python/actions/workflows/ci.yml) [![Version](https://img.shields.io/static/v1?label=version&message=2024.01.16-2&color=4d4dff)](https://github.com/python-boltons/cc-python/blob/master/CHANGELOG.md#20240116-2)
 
 This repository contains the [cookiecutter] that I use for all of my Python
 projects. Refer to [this link][8] for a list of all projects that were
