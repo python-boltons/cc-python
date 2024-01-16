@@ -3,7 +3,7 @@ pytest
 pytest-cov
 pytest-mock
 syrupy
-tox < 4
+tox
 tox-pyenv
 -e file:.#egg={{ cookiecutter.pypi_package_name }}>=0.dev
 
