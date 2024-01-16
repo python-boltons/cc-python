@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...HEAD)
+## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-3...HEAD)
+
+No notable changes have been made.
+
+## [2024.01.16-3](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...2024.01.16-3)
 
 * Upgrade to pythonboltons/main:2024.01.16 docker image.
 
