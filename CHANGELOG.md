@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog], and this project uses
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Calendar Versioning]: https://calver.org/
 
-## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-3...HEAD)
+## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-4...HEAD)
+
+No notable changes have been made.
+
+## [2024.01.16-4](https://github.com/python-boltons/cc-python/compare/2024.01.16-3...2024.01.16-4)
 
 * Fix [setup.py][1] Python versions to reflect that generated projects now
   support the following versions: 3.9, 3.10, 3.11, and 3.12
