@@ -7,13 +7,13 @@ generated using this cookiecutter.
 [cookiecutter]: https://github.com/cookiecutter/cookiecutter
 
 
-## Initializing a New Project using this cookiecutter
+## Initializing a new project using this cookiecutter
 
 This section provides a demonstration of initializing a new cc-python project,
 say `foobar`, under some github organization, say `org`, using this
 cookiecutter repo.
 
-#### 1) Setup the GitHub Repository
+#### 1) Setup the gitHub repository
 
 We must first create a new repository under the [org][5] organization using
 GitHub. These next few steps are then needed to allow our new repository to
@@ -27,7 +27,7 @@ talk to the outside world:
 * [Import](https://readthedocs.org/dashboard/) the `foobar` project from
   [readthedocs][2].
 
-#### 2) Use `cruft` to Generate a New Local Project
+#### 2) Use `cruft` to generate a new local project
 
 We then use [cruft][6] to initialize a new project using this cookiecutter.
 Before we can do that, we need to install cruft (we recommend using [pipx][7]
@@ -51,7 +51,7 @@ cruft create https://github.com/python-boltons/cc-python
 Answer all of the variable prompts that cruft produces (e.g. `org` for the
 `git_org_name` prompt and `foobar` for the `git_repo_name` prompt).
 
-#### 3) Initialize the Project
+#### 3) Initialize the project
 
 Run the following commands to initialize your new local project and push this
 project to the repo you created earlier via GitHub's web interface:
@@ -73,7 +73,7 @@ git commit -m 'Initialize project by running `make all`'
 git push -u origin master
 ```
 
-#### 4) Release First Version to PyPI
+#### 4) Release first version to PyPI
 
 Run the following commands to release the first version (0.1.0) of this
 package to PyPI:
@@ -93,7 +93,7 @@ bumpversion minor
 git push && git push --tags
 ```
 
-#### 5) Final Touches
+#### 5) Final touches
 
 Now that we have pushed some code to it, we can cleanup our new repository a
 bit:
@@ -106,7 +106,7 @@ bit:
 * Uncheck all boxes in the "Include in the home page" section.
 
 
-## How to Propagate Changes to All Cookiecutter Projects
+## How to propagate changes to all cookiecutter projects?
 
 Bringing a project up-to-date is generally as simple as running `cruft update`
 from the root directory of that project and then submitting a new PR.  With
@@ -114,7 +114,7 @@ that said, see the [Dealing with Cruft
 Conflicts](#dealing-with-cruft-conflicts) section below if cruft reports any
 conflicts.
 
-### Dealing with Cruft Conflicts
+### Dealing with cruft conflicts
 
 Dealing with `cruft update` conflicts can be tricky at the moment (see the note
 below). When the `cruft update` command is unable to merge a subset of the new
@@ -142,6 +142,25 @@ find . -type f -name '*.rej' -delete
 > the `cruft update` command handles conflicts.
 
 
+## How to release a new version of this cookiecutter?
+
+This repo is configured to release a new version automatically if any new
+bullets are added to the "Unreleased" section of the [CHANGELOG.md][10].
+
+It is important to note that `cruft update` will technically start working
+immediately after pushing changes to this repo. By _release_, we simply mean
+that:
+
+* A new git tag will be added.
+* A new version section will be added to the [CHANGELOG.md][10] file.
+* This project's version badges will be updated.
+
+Despite the fact that our definition of what a "release" means is pretty
+flimsy, it is never-the-less important that releases succeed since a failed
+release often means that our test suite (which generates a few fake projects
+using this cookiecutter) has also failed.
+
+
 [1]: https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows
 [2]: https://docs.readthedocs.io/en/stable/
 [3]: https://github.com/cruft/cruft/issues/49
@@ -151,3 +170,4 @@ find . -type f -name '*.rej' -delete
 [7]: https://github.com/pypa/pipx
 [8]: https://github.com/topics/cc-python
 [9]: https://github.com/topics/python
+[10]: https://github.com/python-boltons/cc-python/blob/master/CHANGELOG.md
