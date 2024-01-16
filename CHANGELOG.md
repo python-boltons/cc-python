@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog], and this project uses
 
 ## [Unreleased](https://github.com/python-boltons/cc-python/compare/2024.01.16-3...HEAD)
 
-No notable changes have been made.
+* Fix [setup.py][1] Python versions to reflect that generated projects now
+  support the following versions: 3.9, 3.10, 3.11, and 3.12
 
 ## [2024.01.16-3](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...2024.01.16-3)
 
@@ -117,3 +118,5 @@ No notable changes have been made.
 ### Miscellaneous
 
 * First release.
+
+[1]: https://github.com/python-boltons/cc-python/blob/master/%7B%7Bcookiecutter.git_repo_name%7D%7D/setup.py
