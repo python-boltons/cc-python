@@ -1,18 +1,23 @@
 name: Labeler
 
-on:  # yamllint disable-line rule:truthy
+"on":
   push:
     branches:
       - master
+
+permissions:
+  # Issues and related comments, assignees, labels, and milestones.
+  issues: write
 
 jobs:
   labeler:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v3
 
       - name: Run Labeler
-        uses: crazy-max/ghaction-github-labeler@v3.1.1
+        uses: crazy-max/ghaction-github-labeler@v4
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-delete: false
