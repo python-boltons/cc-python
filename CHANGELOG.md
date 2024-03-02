@@ -14,23 +14,33 @@ No notable changes have been made.
 
 ## [2024.01.16-4](https://github.com/python-boltons/cc-python/compare/2024.01.16-3...2024.01.16-4)
 
+### Fixed
+
 * Fix [setup.py][1] Python versions to reflect that generated projects now
   support the following versions: 3.9, 3.10, 3.11, and 3.12
 
 ## [2024.01.16-3](https://github.com/python-boltons/cc-python/compare/2024.01.16-2...2024.01.16-3)
 
+### Changed
+
 * Upgrade to pythonboltons/main:2024.01.16 docker image.
 
 ## [2024.01.16-2](https://github.com/python-boltons/cc-python/compare/2024.01.16-1...2024.01.16-2)
+
+### Fixed
 
 * Fix github-labeler permission issues (see
   [ghaction-github-labeler#184](http://github.com/crazy-max/ghaction-github-labeler/issues/184)).
 
 ## [2024.01.16-1](https://github.com/python-boltons/cc-python/compare/2024.01.16...2024.01.16-1)
 
+### Fixed
+
 * Fix readthedocs build by adding `build.os` option.
 
 ## [2024.01.16](https://github.com/python-boltons/cc-python/compare/2022.01.04...2024.01.16)
+
+### Fixed
 
 * Fix install failure when structlog>=23.
 * Fix test failure when tox>=4.
