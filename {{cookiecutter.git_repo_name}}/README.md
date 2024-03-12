@@ -53,7 +53,7 @@ you through the process.
 
 ## Command-Line Interface (CLI)
 
-The subsections that follow are auto-generated using [cog][14].
+The following subsections have been auto-generated using [cog][14]:
 
 ### `{{ cookiecutter.package_name }} --help`
 
