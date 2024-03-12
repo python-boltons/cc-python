@@ -53,7 +53,9 @@ you through the process.
 
 ## Command-Line Interface (CLI)
 
-The output from running `{{ cookiecutter.package_name }} --help` is shown below:
+The subsections that follow are auto-generated using [cog][14].
+
+### `{{ cookiecutter.package_name }} --help`
 
 <!-- [[[[[kooky.cog
 import subprocess
@@ -63,9 +65,9 @@ stdout, _ = popen.communicate()
 print("```", stdout.decode().strip(), "```", sep="\n")
 
 for cmd in []:
-    popen = subprocess.Popen(["zorg"] + cmd.split() + ["--help"], stdout=subprocess.PIPE)
+    popen = subprocess.Popen(["{{ cookiecutter.package_name }}"] + cmd.split() + ["--help"], stdout=subprocess.PIPE)
     stdout, _ = popen.communicate()
-    print(f"\nThe output from running `zorg {cmd} --help` is shown below:\n")
+    print(f"\n### `{{ cookiecutter.package_name }} {cmd} --help`\n")
     print("```", stdout.decode().strip(), "```", sep="\n")
 ]]]]] -->
 <!-- [[[[[end]]]]] -->
@@ -111,3 +113,4 @@ if any(L.strip() for L in lines):
 [11]: https://github.com/pypa/pipx
 [12]: https://github.com/cruft/cruft
 [13]: https://github.com/{{ cookiecutter.git_org_name }}/{{ cookiecutter.git_repo_name }}/issues/new/choose
+[14]: https://pypi.org/project/cogapp/
