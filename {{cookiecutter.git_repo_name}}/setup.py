@@ -19,10 +19,10 @@ from setuptools import find_namespace_packages, setup
 ###############################################################################
 DESCRIPTION = "{{ cookiecutter.package_description }}"
 SUPPORTED_PYTHON_VERSIONS = [
-    (3, 9),
     (3, 10),
     (3, 11),
     (3, 12),
+    (3, 13),
 ]
 USE_SCM_VERSION = {"fallback_version": "0.0.1"}
 
