@@ -1,4 +1,4 @@
-FROM pythonboltons/main:2024.01.16
+FROM pythonboltons/main:2024.10.09
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
